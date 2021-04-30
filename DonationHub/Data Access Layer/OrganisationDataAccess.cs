@@ -33,9 +33,9 @@ namespace DonationHub.Data_Access_Layer
             return volunteerOrganisations;
 
         }
-        public VolunteerOrganisation GetOrganisation()
+        public VolunteerOrganisation GetOrganisation(int organisationID)
         {
-            string sql = "SELECT * FROM VolunteerOrganisations WHERE OrganisationID = "+id;
+            string sql = "SELECT * FROM VolunteerOrganisations WHERE OrganisationID = "+organisationID;
             SqlDataReader reader = this.GetData(sql);
             List<VolunteerOrganisation> volunteerOrganisations = new List<VolunteerOrganisation>();
 
@@ -54,6 +54,22 @@ namespace DonationHub.Data_Access_Layer
             //volunteerOrganisations.Add(volunteerOrganisation);
             return null;
 
+        }
+
+        public int AddOrganisation(VolunteerOrganisation volunteerOrganisation)
+        {
+            string sql = "INSERT INTO VolunteerOrganisations (OrganisationName, Email, Username, Password, GovtLicenseNo) VALUES ('" + volunteerOrganisation.OrganisationName + "','" + volunteerOrganisation.Email + "','" + volunteerOrganisation.Username + "','" + volunteerOrganisation.Password + "','" + volunteerOrganisation.GovtLicenseNo + "')";
+            return this.ExecuteQuery(sql);
+        }
+        public int UpdateOrganisation(VolunteerOrganisation volunteerOrganisation)
+        {
+            string sql = "UPDATE VolunteerOrganisations SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "', Username='" + volunteerOrganisation.Username + "', Password='" + volunteerOrganisation.Password + "', GovtLicenseNo='" + volunteerOrganisation.GovtLicenseNo + "' WHERE OrganisationID=" + volunteerOrganisation.OrganisationID;
+            return this.ExecuteQuery(sql);
+        }
+        public int DeleteOrganisation(int organisationID)
+        {
+            string sql = "DELETE FROM VolunteerOrganisations WHERE OrganisationID=" + organisationID;
+            return this.ExecuteQuery(sql);
         }
 
     }

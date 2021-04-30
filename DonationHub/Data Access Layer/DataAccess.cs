@@ -31,7 +31,7 @@ namespace DonationHub.Data_Access_Layer
             this.command = new SqlCommand(sql, connection);
             return this.command.ExecuteReader();
         }
-        private int ExecuteQuery(string sql)
+        public int ExecuteQuery(string sql)
         {
             this.command = new SqlCommand(sql, connection);
             return this.command.ExecuteNonQuery();
