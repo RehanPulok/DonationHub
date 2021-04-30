@@ -49,7 +49,10 @@
   <ItemGroup>
     <Compile Include="Data Access Layer\DataAccess.cs" />
     <Compile Include="Data Access Layer\Entities\Donor.cs" />
+    <Compile Include="Data Access Layer\Entities\FoodDonation.cs" />
+    <Compile Include="Data Access Layer\Entities\MoneyDonation.cs" />
     <Compile Include="Data Access Layer\Entities\VolunteerOrganisation.cs" />
+    <Compile Include="Data Access Layer\OrganisationDataAccess.cs" />
     <Compile Include="Presentation Layer\HomeUser.cs">
       <SubType>Form</SubType>
     </Compile>

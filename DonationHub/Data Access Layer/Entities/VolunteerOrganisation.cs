@@ -10,7 +10,9 @@ namespace DonationHub.Data_Access_Layer.Entities
     {
         public int OrganisationID { get; set; }
         public string Email { get; set; }
-        public int Username { get; set; }
+        public string Username { get; set; }
+
+        public string OrganisationName { get; set; }
         public string Password { get; set; }
         public int GovtLicenseNo { get; set; }
 
