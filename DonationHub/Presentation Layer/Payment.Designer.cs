@@ -46,6 +46,8 @@ namespace DonationHub.Presentation_Layer
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CardPaymentButton = new System.Windows.Forms.Button();
+            this.CardBackButton = new System.Windows.Forms.Button();
+            this.BkashBackButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Bkash.SuspendLayout();
             this.Card.SuspendLayout();
@@ -69,11 +71,12 @@ namespace DonationHub.Presentation_Layer
             this.tabControl1.Location = new System.Drawing.Point(12, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(316, 330);
+            this.tabControl1.Size = new System.Drawing.Size(336, 330);
             this.tabControl1.TabIndex = 2;
             // 
             // Bkash
             // 
+            this.Bkash.Controls.Add(this.BkashBackButton);
             this.Bkash.Controls.Add(this.AmountTextBox);
             this.Bkash.Controls.Add(this.PinTextBox);
             this.Bkash.Controls.Add(this.PhoneNumberTextBox);
@@ -85,13 +88,14 @@ namespace DonationHub.Presentation_Layer
             this.Bkash.Location = new System.Drawing.Point(4, 22);
             this.Bkash.Name = "Bkash";
             this.Bkash.Padding = new System.Windows.Forms.Padding(3);
-            this.Bkash.Size = new System.Drawing.Size(308, 304);
+            this.Bkash.Size = new System.Drawing.Size(328, 304);
             this.Bkash.TabIndex = 1;
             this.Bkash.Text = "Bkash";
             this.Bkash.UseVisualStyleBackColor = true;
             // 
             // Card
             // 
+            this.Card.Controls.Add(this.CardBackButton);
             this.Card.Controls.Add(this.CardAmountTextBox);
             this.Card.Controls.Add(this.CardPinTextBox);
             this.Card.Controls.Add(this.CardNoTextBox);
@@ -102,7 +106,7 @@ namespace DonationHub.Presentation_Layer
             this.Card.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Card.Location = new System.Drawing.Point(4, 22);
             this.Card.Name = "Card";
-            this.Card.Size = new System.Drawing.Size(308, 304);
+            this.Card.Size = new System.Drawing.Size(328, 304);
             this.Card.TabIndex = 2;
             this.Card.Text = "Card";
             this.Card.UseVisualStyleBackColor = true;
@@ -213,6 +217,28 @@ namespace DonationHub.Presentation_Layer
             this.CardPaymentButton.Text = "Make Payment";
             this.CardPaymentButton.UseVisualStyleBackColor = true;
             // 
+            // CardBackButton
+            // 
+            this.CardBackButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardBackButton.Location = new System.Drawing.Point(234, 272);
+            this.CardBackButton.Name = "CardBackButton";
+            this.CardBackButton.Size = new System.Drawing.Size(91, 29);
+            this.CardBackButton.TabIndex = 16;
+            this.CardBackButton.Text = "Back";
+            this.CardBackButton.UseVisualStyleBackColor = true;
+            this.CardBackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // BkashBackButton
+            // 
+            this.BkashBackButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BkashBackButton.Location = new System.Drawing.Point(231, 269);
+            this.BkashBackButton.Name = "BkashBackButton";
+            this.BkashBackButton.Size = new System.Drawing.Size(91, 29);
+            this.BkashBackButton.TabIndex = 17;
+            this.BkashBackButton.Text = "Back";
+            this.BkashBackButton.UseVisualStyleBackColor = true;
+            this.BkashBackButton.Click += new System.EventHandler(this.BkashBackButton_Click);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,5 +276,7 @@ namespace DonationHub.Presentation_Layer
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button CardPaymentButton;
+        private System.Windows.Forms.Button CardBackButton;
+        private System.Windows.Forms.Button BkashBackButton;
     }
 }
