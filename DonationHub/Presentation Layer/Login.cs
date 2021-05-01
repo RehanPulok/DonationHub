@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Presentation_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,13 @@ namespace DonationHub
             Registration registration = new Registration();
             this.Hide();
             registration.Show();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            ViewOrganisation viewOrganisation = new ViewOrganisation();
+            this.Hide();
+            viewOrganisation.Show();
         }
     }
 }

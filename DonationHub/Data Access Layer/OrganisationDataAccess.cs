@@ -33,6 +33,12 @@ namespace DonationHub.Data_Access_Layer
             return volunteerOrganisations;
 
         }
+
+        internal void AddOrganisation(object volunteerOrganisation, object volunteerorganisation)
+        {
+            throw new NotImplementedException();
+        }
+
         public VolunteerOrganisation GetOrganisation(int organisationID)
         {
             string sql = "SELECT * FROM VolunteerOrganisations WHERE OrganisationID = "+organisationID;

@@ -33,23 +33,25 @@ namespace DonationHub.Presentation_Layer
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DonateMoneyButton = new System.Windows.Forms.Button();
             this.DonateFoodButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EventDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.EventDataGridView);
             this.groupBox1.Controls.Add(this.DonateMoneyButton);
             this.groupBox1.Controls.Add(this.DonateFoodButton);
-            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(41, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(615, 573);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // DonateMoneyButton
             // 
@@ -73,15 +75,6 @@ namespace DonationHub.Presentation_Layer
             this.DonateFoodButton.UseVisualStyleBackColor = true;
             this.DonateFoodButton.Click += new System.EventHandler(this.DonateFoodButton_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 264);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(341, 303);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -92,6 +85,14 @@ namespace DonationHub.Presentation_Layer
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // EventDataGridView
+            // 
+            this.EventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EventDataGridView.Location = new System.Drawing.Point(17, 274);
+            this.EventDataGridView.Name = "EventDataGridView";
+            this.EventDataGridView.Size = new System.Drawing.Size(361, 284);
+            this.EventDataGridView.TabIndex = 11;
+            // 
             // Organisation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,8 +102,10 @@ namespace DonationHub.Presentation_Layer
             this.Name = "Organisation";
             this.Text = "Organistion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Biddyanando_FormClosing);
+            this.Load += new System.EventHandler(this.Organisation_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,9 +113,9 @@ namespace DonationHub.Presentation_Layer
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button DonateMoneyButton;
         private System.Windows.Forms.Button DonateFoodButton;
+        private System.Windows.Forms.DataGridView EventDataGridView;
     }
 }

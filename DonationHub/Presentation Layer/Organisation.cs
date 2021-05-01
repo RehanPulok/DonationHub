@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,17 @@ namespace DonationHub.Presentation_Layer
             this.Hide();
             food.Show();
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Organisation_Load(object sender, EventArgs e)
+        {
+            OrganisationService organisationService = new OrganisationService();
+            EventDataGridView.DataSource = organisationService.GetAllVolunteerOrganisations();
         }
     }
 }

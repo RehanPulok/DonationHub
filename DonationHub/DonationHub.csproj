@@ -54,11 +54,47 @@
     <Compile Include="Data Access Layer\Entities\MoneyDonation.cs" />
     <Compile Include="Data Access Layer\Entities\VolunteerOrganisation.cs" />
     <Compile Include="Data Access Layer\OrganisationDataAccess.cs" />
-    <Compile Include="Presentation Layer\HomeUser.cs">
+    <Compile Include="Presentation Layer\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\HomeUser.Designer.cs">
-      <DependentUpon>HomeUser.cs</DependentUpon>
+    <Compile Include="Presentation Layer\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\AdminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\AdminHome.Designer.cs">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\DeleteOrganisation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\DeleteOrganisation.Designer.cs">
+      <DependentUpon>DeleteOrganisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\OrganisationHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\OrganisationHome.Designer.cs">
+      <DependentUpon>OrganisationHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\SerachOrganisaiton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\SerachOrganisaiton.Designer.cs">
+      <DependentUpon>SerachOrganisaiton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\UpdateOrganisation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\UpdateOrganisation.Designer.cs">
+      <DependentUpon>UpdateOrganisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\UpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Organisation.cs">
       <SubType>Form</SubType>
@@ -90,10 +126,34 @@
     <Compile Include="Presentation Layer\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ViewOrganisation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ViewOrganisation.Designer.cs">
+      <DependentUpon>ViewOrganisation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation Layer\HomeUser.resx">
-      <DependentUpon>HomeUser.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\AdminHome.resx">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\DeleteOrganisation.resx">
+      <DependentUpon>DeleteOrganisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\OrganisationHome.resx">
+      <DependentUpon>OrganisationHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\SerachOrganisaiton.resx">
+      <DependentUpon>SerachOrganisaiton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\UpdateOrganisation.resx">
+      <DependentUpon>UpdateOrganisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Organisation.resx">
       <DependentUpon>Organisation.cs</DependentUpon>
@@ -109,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ViewOrganisation.resx">
+      <DependentUpon>ViewOrganisation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

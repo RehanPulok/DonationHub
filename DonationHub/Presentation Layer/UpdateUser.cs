@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DonationHub.Presentation_Layer
 {
-    public partial class HomeUser : Form
+    public partial class UpdateUser : Form
     {
-        public HomeUser()
+        public UpdateUser()
         {
             InitializeComponent();
         }

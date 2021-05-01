@@ -17,7 +17,7 @@ namespace DonationHub.Data_Access_Layer
         {
             try
             {
-                this.connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Donation Hub"].ConnectionString);
+                this.connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DonationHubDb"].ConnectionString);
                 this.connection.Open();
             }
             catch (Exception exp)
