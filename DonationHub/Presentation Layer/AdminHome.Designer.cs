@@ -61,6 +61,7 @@ namespace DonationHub.Presentation_Layer
             this.DeleteUserButtonAdminHome.TabIndex = 26;
             this.DeleteUserButtonAdminHome.Text = "Delete User";
             this.DeleteUserButtonAdminHome.UseVisualStyleBackColor = true;
+            this.DeleteUserButtonAdminHome.Click += new System.EventHandler(this.DeleteUserButtonAdminHome_Click);
             // 
             // AddUserButtonAdminHome
             // 

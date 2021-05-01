@@ -14,6 +14,7 @@ namespace DonationHub.Data_Access_Layer.Entities
 
         public string OrganisationName { get; set; }
         public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public int GovtLicenseNo { get; set; }
 
     }

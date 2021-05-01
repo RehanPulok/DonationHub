@@ -39,6 +39,14 @@ namespace DonationHub.Presentation_Layer
             this.BackButtonOrganisationHome = new System.Windows.Forms.Button();
             this.DeleteEventButtonOrganisationHome = new System.Windows.Forms.Button();
             this.updateProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EventNameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EventIDTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CreateEventTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.EventDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).BeginInit();
@@ -63,6 +71,14 @@ namespace DonationHub.Presentation_Layer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.EventDateTimePicker);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.CreateEventTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.EventIDTextBox);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.EventNameTextBox);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DeleteEventButtonOrganisationHome);
             this.groupBox1.Controls.Add(this.AddEventButtonOrganisationHome);
             this.groupBox1.Controls.Add(this.UpdateEventButtonOrganisationHome);
@@ -75,35 +91,38 @@ namespace DonationHub.Presentation_Layer
             // EventDataGridView
             // 
             this.EventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EventDataGridView.Location = new System.Drawing.Point(274, 27);
+            this.EventDataGridView.Location = new System.Drawing.Point(274, 66);
             this.EventDataGridView.Name = "EventDataGridView";
-            this.EventDataGridView.Size = new System.Drawing.Size(392, 498);
+            this.EventDataGridView.Size = new System.Drawing.Size(392, 510);
             this.EventDataGridView.TabIndex = 2;
+            this.EventDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EventDataGridView_CellClick);
             // 
             // LogoutButtonOrganisationHome
             // 
             this.LogoutButtonOrganisationHome.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutButtonOrganisationHome.Location = new System.Drawing.Point(575, 543);
+            this.LogoutButtonOrganisationHome.Location = new System.Drawing.Point(575, 27);
             this.LogoutButtonOrganisationHome.Name = "LogoutButtonOrganisationHome";
             this.LogoutButtonOrganisationHome.Size = new System.Drawing.Size(91, 33);
             this.LogoutButtonOrganisationHome.TabIndex = 21;
             this.LogoutButtonOrganisationHome.Text = "Logout";
             this.LogoutButtonOrganisationHome.UseVisualStyleBackColor = true;
+            this.LogoutButtonOrganisationHome.Click += new System.EventHandler(this.LogoutButtonOrganisationHome_Click);
             // 
             // UpdateEventButtonOrganisationHome
             // 
             this.UpdateEventButtonOrganisationHome.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 226);
+            this.UpdateEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 399);
             this.UpdateEventButtonOrganisationHome.Name = "UpdateEventButtonOrganisationHome";
             this.UpdateEventButtonOrganisationHome.Size = new System.Drawing.Size(174, 33);
             this.UpdateEventButtonOrganisationHome.TabIndex = 24;
             this.UpdateEventButtonOrganisationHome.Text = "Update Event";
             this.UpdateEventButtonOrganisationHome.UseVisualStyleBackColor = true;
+            this.UpdateEventButtonOrganisationHome.Click += new System.EventHandler(this.UpdateEventButtonOrganisationHome_Click);
             // 
             // AddEventButtonOrganisationHome
             // 
             this.AddEventButtonOrganisationHome.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 135);
+            this.AddEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 162);
             this.AddEventButtonOrganisationHome.Name = "AddEventButtonOrganisationHome";
             this.AddEventButtonOrganisationHome.Size = new System.Drawing.Size(174, 33);
             this.AddEventButtonOrganisationHome.TabIndex = 25;
@@ -114,17 +133,17 @@ namespace DonationHub.Presentation_Layer
             // BackButtonOrganisationHome
             // 
             this.BackButtonOrganisationHome.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButtonOrganisationHome.Location = new System.Drawing.Point(12, 543);
+            this.BackButtonOrganisationHome.Location = new System.Drawing.Point(12, 552);
             this.BackButtonOrganisationHome.Name = "BackButtonOrganisationHome";
             this.BackButtonOrganisationHome.Size = new System.Drawing.Size(91, 33);
             this.BackButtonOrganisationHome.TabIndex = 26;
-            this.BackButtonOrganisationHome.Text = "Logout";
+            this.BackButtonOrganisationHome.Text = "Back";
             this.BackButtonOrganisationHome.UseVisualStyleBackColor = true;
             // 
             // DeleteEventButtonOrganisationHome
             // 
             this.DeleteEventButtonOrganisationHome.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 321);
+            this.DeleteEventButtonOrganisationHome.Location = new System.Drawing.Point(28, 448);
             this.DeleteEventButtonOrganisationHome.Name = "DeleteEventButtonOrganisationHome";
             this.DeleteEventButtonOrganisationHome.Size = new System.Drawing.Size(174, 33);
             this.DeleteEventButtonOrganisationHome.TabIndex = 26;
@@ -137,6 +156,83 @@ namespace DonationHub.Presentation_Layer
             this.updateProfileToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.updateProfileToolStripMenuItem.Text = "Update Profile";
             this.updateProfileToolStripMenuItem.Click += new System.EventHandler(this.updateProfileToolStripMenuItem_Click);
+            // 
+            // EventNameTextBox
+            // 
+            this.EventNameTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventNameTextBox.Location = new System.Drawing.Point(26, 342);
+            this.EventNameTextBox.Name = "EventNameTextBox";
+            this.EventNameTextBox.Size = new System.Drawing.Size(182, 32);
+            this.EventNameTextBox.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(55, 306);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Event Name";
+            // 
+            // EventIDTextBox
+            // 
+            this.EventIDTextBox.Enabled = false;
+            this.EventIDTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EventIDTextBox.Location = new System.Drawing.Point(28, 271);
+            this.EventIDTextBox.Name = "EventIDTextBox";
+            this.EventIDTextBox.Size = new System.Drawing.Size(182, 32);
+            this.EventIDTextBox.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 245);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 23);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Event ID";
+            // 
+            // CreateEventTextBox
+            // 
+            this.CreateEventTextBox.Enabled = false;
+            this.CreateEventTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateEventTextBox.Location = new System.Drawing.Point(28, 46);
+            this.CreateEventTextBox.Name = "CreateEventTextBox";
+            this.CreateEventTextBox.Size = new System.Drawing.Size(182, 32);
+            this.CreateEventTextBox.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(55, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 23);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Event Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(79, 81);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 23);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Date";
+            // 
+            // EventDateTimePicker
+            // 
+            this.EventDateTimePicker.Location = new System.Drawing.Point(28, 118);
+            this.EventDateTimePicker.Name = "EventDateTimePicker";
+            this.EventDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.EventDateTimePicker.TabIndex = 36;
             // 
             // OrganisationHome
             // 
@@ -158,6 +254,7 @@ namespace DonationHub.Presentation_Layer
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,5 +273,13 @@ namespace DonationHub.Presentation_Layer
         private System.Windows.Forms.Button LogoutButtonOrganisationHome;
         private System.Windows.Forms.Button BackButtonOrganisationHome;
         private System.Windows.Forms.ToolStripMenuItem updateProfileToolStripMenuItem;
+        private System.Windows.Forms.TextBox EventIDTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox EventNameTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker EventDateTimePicker;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox CreateEventTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

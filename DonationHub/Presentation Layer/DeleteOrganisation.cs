@@ -54,5 +54,15 @@ namespace DonationHub.Presentation_Layer
             this.Hide();
             organisationHome.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

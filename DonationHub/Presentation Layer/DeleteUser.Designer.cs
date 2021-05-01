@@ -1,7 +1,7 @@
 ﻿
 namespace DonationHub.Presentation_Layer
 {
-    partial class DeleteOrganisation
+    partial class DeleteUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,54 +29,53 @@ namespace DonationHub.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            this.BackDeleteButton = new System.Windows.Forms.Button();
-            this.LogoutButtonDeleteOrganisation = new System.Windows.Forms.Button();
+            this.BackButtonUserDelete = new System.Windows.Forms.Button();
+            this.LogoutButtonDeleteUser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchOrganisationTextBox = new System.Windows.Forms.TextBox();
-            this.DeleteOrganisationButton = new System.Windows.Forms.Button();
+            this.DeleteUserButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BackDeleteButton
+            // BackButtonUserDelete
             // 
-            this.BackDeleteButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackDeleteButton.Location = new System.Drawing.Point(15, 559);
-            this.BackDeleteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.BackDeleteButton.Name = "BackDeleteButton";
-            this.BackDeleteButton.Size = new System.Drawing.Size(136, 41);
-            this.BackDeleteButton.TabIndex = 25;
-            this.BackDeleteButton.Text = "Back";
-            this.BackDeleteButton.UseVisualStyleBackColor = true;
-            this.BackDeleteButton.Click += new System.EventHandler(this.BackDeleteButton_Click);
+            this.BackButtonUserDelete.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButtonUserDelete.Location = new System.Drawing.Point(13, 556);
+            this.BackButtonUserDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.BackButtonUserDelete.Name = "BackButtonUserDelete";
+            this.BackButtonUserDelete.Size = new System.Drawing.Size(136, 41);
+            this.BackButtonUserDelete.TabIndex = 28;
+            this.BackButtonUserDelete.Text = "Back";
+            this.BackButtonUserDelete.UseVisualStyleBackColor = true;
+            this.BackButtonUserDelete.Click += new System.EventHandler(this.BackButtonUserDelete_Click);
             // 
-            // LogoutButtonDeleteOrganisation
+            // LogoutButtonDeleteUser
             // 
-            this.LogoutButtonDeleteOrganisation.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutButtonDeleteOrganisation.Location = new System.Drawing.Point(415, 28);
-            this.LogoutButtonDeleteOrganisation.Margin = new System.Windows.Forms.Padding(4);
-            this.LogoutButtonDeleteOrganisation.Name = "LogoutButtonDeleteOrganisation";
-            this.LogoutButtonDeleteOrganisation.Size = new System.Drawing.Size(136, 41);
-            this.LogoutButtonDeleteOrganisation.TabIndex = 24;
-            this.LogoutButtonDeleteOrganisation.Text = "Logout";
-            this.LogoutButtonDeleteOrganisation.UseVisualStyleBackColor = true;
-            this.LogoutButtonDeleteOrganisation.Click += new System.EventHandler(this.LogoutButtonDeleteOrganisation_Click);
+            this.LogoutButtonDeleteUser.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutButtonDeleteUser.Location = new System.Drawing.Point(382, 32);
+            this.LogoutButtonDeleteUser.Margin = new System.Windows.Forms.Padding(4);
+            this.LogoutButtonDeleteUser.Name = "LogoutButtonDeleteUser";
+            this.LogoutButtonDeleteUser.Size = new System.Drawing.Size(136, 41);
+            this.LogoutButtonDeleteUser.TabIndex = 27;
+            this.LogoutButtonDeleteUser.Text = "Logout";
+            this.LogoutButtonDeleteUser.UseVisualStyleBackColor = true;
+            this.LogoutButtonDeleteUser.Click += new System.EventHandler(this.LogoutButtonDeleteUser_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.SearchOrganisationTextBox);
-            this.groupBox1.Controls.Add(this.DeleteOrganisationButton);
+            this.groupBox1.Controls.Add(this.DeleteUserButton);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(75, 81);
+            this.groupBox1.Location = new System.Drawing.Point(42, 85);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(408, 464);
-            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Delete Organisation";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "Delete User";
             // 
             // SearchOrganisationTextBox
             // 
@@ -86,17 +85,16 @@ namespace DonationHub.Presentation_Layer
             this.SearchOrganisationTextBox.Size = new System.Drawing.Size(182, 32);
             this.SearchOrganisationTextBox.TabIndex = 24;
             // 
-            // DeleteOrganisationButton
+            // DeleteUserButton
             // 
-            this.DeleteOrganisationButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteOrganisationButton.Location = new System.Drawing.Point(131, 190);
-            this.DeleteOrganisationButton.Margin = new System.Windows.Forms.Padding(4);
-            this.DeleteOrganisationButton.Name = "DeleteOrganisationButton";
-            this.DeleteOrganisationButton.Size = new System.Drawing.Size(136, 41);
-            this.DeleteOrganisationButton.TabIndex = 23;
-            this.DeleteOrganisationButton.Text = "Delete";
-            this.DeleteOrganisationButton.UseVisualStyleBackColor = true;
-            this.DeleteOrganisationButton.Click += new System.EventHandler(this.DeleteOrganisationButton_Click);
+            this.DeleteUserButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteUserButton.Location = new System.Drawing.Point(131, 189);
+            this.DeleteUserButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteUserButton.Name = "DeleteUserButton";
+            this.DeleteUserButton.Size = new System.Drawing.Size(136, 41);
+            this.DeleteUserButton.TabIndex = 23;
+            this.DeleteUserButton.Text = "Delete";
+            this.DeleteUserButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -109,16 +107,16 @@ namespace DonationHub.Presentation_Layer
             this.label1.TabIndex = 0;
             this.label1.Text = "Delete by ID";
             // 
-            // DeleteOrganisation
+            // DeleteUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 608);
-            this.Controls.Add(this.BackDeleteButton);
-            this.Controls.Add(this.LogoutButtonDeleteOrganisation);
+            this.ClientSize = new System.Drawing.Size(528, 610);
+            this.Controls.Add(this.BackButtonUserDelete);
+            this.Controls.Add(this.LogoutButtonDeleteUser);
             this.Controls.Add(this.groupBox1);
-            this.Name = "DeleteOrganisation";
-            this.Text = "DeleteOrganisation";
+            this.Name = "DeleteUser";
+            this.Text = "DeleteUser";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -127,11 +125,11 @@ namespace DonationHub.Presentation_Layer
 
         #endregion
 
-        private System.Windows.Forms.Button BackDeleteButton;
-        private System.Windows.Forms.Button LogoutButtonDeleteOrganisation;
+        private System.Windows.Forms.Button BackButtonUserDelete;
+        private System.Windows.Forms.Button LogoutButtonDeleteUser;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox SearchOrganisationTextBox;
-        private System.Windows.Forms.Button DeleteOrganisationButton;
+        private System.Windows.Forms.Button DeleteUserButton;
         private System.Windows.Forms.Label label1;
     }
 }

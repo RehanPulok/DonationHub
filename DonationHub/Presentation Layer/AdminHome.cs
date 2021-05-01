@@ -39,5 +39,10 @@ namespace DonationHub.Presentation_Layer
         {
 
         }
+
+        private void DeleteUserButtonAdminHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

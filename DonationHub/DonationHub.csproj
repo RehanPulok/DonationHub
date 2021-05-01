@@ -47,8 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic Layer\AdminService.cs" />
+    <Compile Include="Business Logic Layer\DonorService.cs" />
     <Compile Include="Business Logic Layer\OrganisationService.cs" />
+    <Compile Include="Data Access Layer\AdminDataAccess.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
+    <Compile Include="Data Access Layer\DonorDataAccess.cs" />
     <Compile Include="Data Access Layer\Entities\Donor.cs" />
     <Compile Include="Data Access Layer\Entities\FoodDonation.cs" />
     <Compile Include="Data Access Layer\Entities\MoneyDonation.cs" />
@@ -59,6 +63,12 @@
     </Compile>
     <Compile Include="Presentation Layer\AddOrganisation.Designer.cs">
       <DependentUpon>AddOrganisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\Admin.cs">
       <SubType>Form</SubType>
@@ -77,6 +87,12 @@
     </Compile>
     <Compile Include="Presentation Layer\DeleteOrganisation.Designer.cs">
       <DependentUpon>DeleteOrganisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\OrganisationHome.cs">
       <SubType>Form</SubType>
@@ -143,6 +159,9 @@
     <EmbeddedResource Include="Presentation Layer\AddOrganisation.resx">
       <DependentUpon>AddOrganisation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\DeleteOrganisation.resx">
       <DependentUpon>DeleteOrganisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\OrganisationHome.resx">
       <DependentUpon>OrganisationHome.cs</DependentUpon>

@@ -41,5 +41,21 @@ namespace DonationHub.Presentation_Layer
         {
 
         }
+
+        private void EventDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EventNameTextBox.Text = EventDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            EventIDTextBox.Text= EventDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void LogoutButtonOrganisationHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateEventButtonOrganisationHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

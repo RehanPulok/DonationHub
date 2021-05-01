@@ -28,22 +28,14 @@ namespace DonationHub.Business_Logic_Layer
             return this.organisationDataAccess.GetOrganisation(organisationID);
         }
 
-        public int AddNewOrganisation(string OrganisationName, string email,string username, string password, int govtLicenseNO )
-        {
-            VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation() {OrganisationName= OrganisationName, Email= email, Username= username, Password= password, GovtLicenseNo= govtLicenseNO };
-            return this.organisationDataAccess.AddOrganisation(volunteerOrganisation);
-        }
+        
         public int UpdateExistingOrganisation(string OrganisationName, string email, string username, string password, int govtLicenseNO)
         {
             VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation() { OrganisationName = OrganisationName, Email = email, Username = username, Password = password, GovtLicenseNo = govtLicenseNO };
             //OrganisationID
             return this.organisationDataAccess.UpdateOrganisation(volunteerOrganisation);
         }
-        public int DeleteOrganisation(int id)
-        {
-            VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation() { OrganisationID= id};
-            return this.organisationDataAccess.DeleteOrganisation(id);
-        }
+        
     }
     
 }
