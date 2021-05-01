@@ -67,6 +67,7 @@ namespace DonationHub.Presentation_Layer
             this.groupBox1.Size = new System.Drawing.Size(252, 438);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // DeleteOrganisationButtonAdminHome
             // 
@@ -114,6 +115,7 @@ namespace DonationHub.Presentation_Layer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
+            this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrganisationListDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

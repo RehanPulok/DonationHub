@@ -103,6 +103,7 @@ namespace DonationHub.Presentation_Layer
             this.UserListDataGridView.Name = "UserListDataGridView";
             this.UserListDataGridView.Size = new System.Drawing.Size(334, 515);
             this.UserListDataGridView.TabIndex = 4;
+            this.UserListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDataGridView_CellContentClick);
             // 
             // LogoutButton
             // 
@@ -128,6 +129,7 @@ namespace DonationHub.Presentation_Layer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminHome";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminHome_FormClosing);
+            this.Load += new System.EventHandler(this.AdminHome_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

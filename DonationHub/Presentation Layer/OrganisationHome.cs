@@ -36,5 +36,10 @@ namespace DonationHub.Presentation_Layer
             this.Hide();
             updateOrganisation.Show();
         }
+
+        private void OrganisationHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

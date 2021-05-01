@@ -29,5 +29,15 @@ namespace DonationHub.Presentation_Layer
             admin.Show();
 
         }
+
+        private void UserListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void AdminHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace DonationHub.Presentation_Layer
 {
-    public partial class DeleteOrganisation : Form
+    public partial class AddOrganisation : Form
     {
-        public DeleteOrganisation()
+        public AddOrganisation()
         {
             InitializeComponent();
         }
 
-        private void DeleteOrganisationButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             OrganisationService organisationService = new OrganisationService();
-            int result= organisationService.DeleteOrganisation(Convert.ToInt32(SearchOrganisationTextBox.Text));
+            int result= organisationService.AddNewOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text));
             if (result>0)
             {
-                MessageBox.Show("Volunteer Organisation deleted. ");
+                MessageBox.Show("Volunteer Organisation added successfully");
                 Admin admin = new Admin();
                 this.Hide();
                 admin.UpdateOrganisations();
@@ -32,27 +32,12 @@ namespace DonationHub.Presentation_Layer
             }
             else
             {
-                MessageBox.Show("Error in deleting Volunteer organisation");
+                MessageBox.Show("Error in adding Volunteer Organisation.");
                 Admin admin = new Admin();
                 this.Hide();
                 admin.UpdateOrganisations();
                 admin.Show();
             }
-
-        }
-
-        private void LogoutButtonDeleteOrganisation_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            this.Hide();
-            login.Show();
-        }
-
-        private void BackDeleteButton_Click(object sender, EventArgs e)
-        {
-            OrganisationHome organisationHome = new OrganisationHome();
-            this.Hide();
-            organisationHome.Show();
         }
     }
 }

@@ -154,6 +154,7 @@ namespace DonationHub.Presentation_Layer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrganisationHome";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrganisationHome_FormClosing);
+            this.Load += new System.EventHandler(this.OrganisationHome_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
