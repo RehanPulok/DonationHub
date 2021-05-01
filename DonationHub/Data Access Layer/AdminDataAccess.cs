@@ -24,9 +24,11 @@ namespace DonationHub.Data_Access_Layer
                 donor.Lastname = reader["LastName"].ToString();
                 donor.Email = reader["Email"].ToString();
                 donor.Username = reader["Username"].ToString();
-                donor.Password = reader["Password"].ToString();
+                donor.Password = reader["Password"].ToString();                
                 donor.Gender = reader["Gender"].ToString();
                 donor.BloodGroup = reader["BloodGroup"].ToString();
+                donor.DonorID = Convert.ToInt32(reader["DonorID"]);
+                donor.Address = reader["Address"].ToString();
 
 
                 donors.Add(donor);

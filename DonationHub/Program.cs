@@ -17,7 +17,7 @@ namespace DonationHub
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrganisationHome());
+            Application.Run(new AdminHome());
         }
     }
 }

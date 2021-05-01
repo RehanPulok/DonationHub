@@ -18,28 +18,7 @@ namespace DonationHub.Presentation_Layer
             InitializeComponent();
         }
 
-        private void DeleteOrganisationButton_Click(object sender, EventArgs e)
-        {
-            OrganisationService organisationService = new OrganisationService();
-            int result= organisationService.DeleteOrganisation(Convert.ToInt32(SearchOrganisationTextBox.Text));
-            if (result>0)
-            {
-                MessageBox.Show("Volunteer Organisation deleted. ");
-                Admin admin = new Admin();
-                this.Hide();
-                admin.UpdateOrganisations();
-                admin.Show();
-            }
-            else
-            {
-                MessageBox.Show("Error in deleting Volunteer organisation");
-                Admin admin = new Admin();
-                this.Hide();
-                admin.UpdateOrganisations();
-                admin.Show();
-            }
-
-        }
+        
 
         private void LogoutButtonDeleteOrganisation_Click(object sender, EventArgs e)
         {
@@ -62,6 +41,29 @@ namespace DonationHub.Presentation_Layer
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void DeleteOrganisationButton_Click(object sender, EventArgs e)
+        {
+            AdminService adminService = new AdminService();
+            int result = adminService.DeleteOrganisation(Convert.ToInt32(SearchOrganisationTextBox.Text));
+            if (result > 0)
+            {
+                MessageBox.Show("Volunteer Organisation deleted. ");
+                Admin admin = new Admin();
+                this.Hide();
+                admin.UpdateOrganisations();
+                admin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error in deleting Volunteer organisation");
+                Admin admin = new Admin();
+                this.Hide();
+                admin.UpdateOrganisations();
+                admin.Show();
+            }
 
         }
     }

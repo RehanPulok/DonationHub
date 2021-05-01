@@ -20,8 +20,8 @@ namespace DonationHub.Presentation_Layer
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            OrganisationService organisationService = new OrganisationService();
-            int result= organisationService.AddNewOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text));
+            AdminService adminService = new AdminService();
+            int result= adminService.AddNewOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text));
             if (result>0)
             {
                 MessageBox.Show("Volunteer Organisation added successfully");
@@ -38,6 +38,16 @@ namespace DonationHub.Presentation_Layer
                 admin.UpdateOrganisations();
                 admin.Show();
             }
+        }
+
+        private void BackButtonAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutButtonAdmin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

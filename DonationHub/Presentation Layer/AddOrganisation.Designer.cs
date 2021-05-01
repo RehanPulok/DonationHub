@@ -211,6 +211,7 @@ namespace DonationHub.Presentation_Layer
             this.BackButtonAdmin.TabIndex = 29;
             this.BackButtonAdmin.Text = "Back";
             this.BackButtonAdmin.UseVisualStyleBackColor = true;
+            this.BackButtonAdmin.Click += new System.EventHandler(this.BackButtonAdmin_Click);
             // 
             // LogoutButtonAdmin
             // 
@@ -221,6 +222,7 @@ namespace DonationHub.Presentation_Layer
             this.LogoutButtonAdmin.TabIndex = 28;
             this.LogoutButtonAdmin.Text = "Logout";
             this.LogoutButtonAdmin.UseVisualStyleBackColor = true;
+            this.LogoutButtonAdmin.Click += new System.EventHandler(this.LogoutButtonAdmin_Click);
             // 
             // AddOrganisation
             // 

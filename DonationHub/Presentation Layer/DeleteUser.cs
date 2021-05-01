@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,27 @@ namespace DonationHub.Presentation_Layer
             AdminHome organisationHome = new AdminHome();
             this.Hide();
             organisationHome.Show();
+        }
+
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+
+            AdminService adminService = new AdminService();
+            int result= adminService.DeleteUser(Convert.ToInt32( SearchOrganisationTextBox.Text));
+            if (result>0)
+            {
+                MessageBox.Show("User Deleted Successfully");
+                AdminHome adminHome = new AdminHome();
+                this.Hide();
+                adminHome.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+                AdminHome adminHome = new AdminHome();
+                this.Hide();
+                adminHome.Show();
+            }
         }
     }
 }

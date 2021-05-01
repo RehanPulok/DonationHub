@@ -72,6 +72,7 @@ namespace DonationHub.Presentation_Layer
             this.AddUserButtonAdminHome.TabIndex = 25;
             this.AddUserButtonAdminHome.Text = "Add User";
             this.AddUserButtonAdminHome.UseVisualStyleBackColor = true;
+            this.AddUserButtonAdminHome.Click += new System.EventHandler(this.AddUserButtonAdminHome_Click);
             // 
             // menuStrip1
             // 
@@ -115,6 +116,7 @@ namespace DonationHub.Presentation_Layer
             this.LogoutButton.TabIndex = 23;
             this.LogoutButton.Text = "Logout";
             this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // AdminHome
             // 

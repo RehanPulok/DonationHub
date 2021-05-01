@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,12 +38,31 @@ namespace DonationHub.Presentation_Layer
 
         private void AdminHome_Load(object sender, EventArgs e)
         {
-
+            AdminService adminService = new AdminService();
+            UserListDataGridView.DataSource= adminService.GetAllUsers();
         }
 
         private void DeleteUserButtonAdminHome_Click(object sender, EventArgs e)
         {
+            DeleteUser deleteUser = new DeleteUser();
+            this.Hide();
+            deleteUser.Show();
+        }
 
+        private void AddUserButtonAdminHome_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            this.Hide();
+            addUser.Show();
+            //AdminService adminService = new AdminService();
+            //adminService.AddNewUser();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
         }
     }
 }

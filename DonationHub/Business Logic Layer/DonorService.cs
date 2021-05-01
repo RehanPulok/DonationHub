@@ -29,9 +29,9 @@ namespace DonationHub.Business_Logic_Layer
         }
 
         
-        public int UpdateExistingDonor(string firstName, string LasttName, string email, string username, string password, string gender, string bloodGroup)
+        public int UpdateExistingDonor( string firstName, string LasttName, string email, string username, string password,string address, string gender, string bloodGroup)
         {
-            Donor donor = new Donor() { FirstName = firstName, Lastname = LasttName, Email = email, Username = username, Password = password, Gender = gender, BloodGroup = bloodGroup };
+            Donor donor = new Donor() {  FirstName = firstName, Lastname = LasttName, Email = email, Username = username, Password = password, Address = address, Gender = gender, BloodGroup = bloodGroup };
             //OrganisationID
             return this.donorDataAccess.UpdateDonor(donor);
         }
