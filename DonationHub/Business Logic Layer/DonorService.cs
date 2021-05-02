@@ -29,8 +29,12 @@ namespace DonationHub.Business_Logic_Layer
         {
             return this.donorDataAccess.GetDonor(DonorID);
         }
+        public Donor GetDonorName(int DonorID)
+        {
+            return this.donorDataAccess.GetDonor(DonorID);
+        }
 
-        
+
         public int UpdateExistingDonor( string firstName, string LasttName, string email, string username, string password,string address, string gender, string bloodGroup)
         {
             Donor donor = new Donor() {  FirstName = firstName, Lastname = LasttName, Email = email, Username = username, Password = password, Address = address, Gender = gender, BloodGroup = bloodGroup };

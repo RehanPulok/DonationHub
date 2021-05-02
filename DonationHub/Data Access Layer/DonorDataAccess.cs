@@ -62,8 +62,32 @@ namespace DonationHub.Data_Access_Layer
             return null;
 
         }
+        public Donor GetDonorName(int donorID)
+        {
+            string sql = "SELECT * FROM Users WHERE DonorID = " + donorID;
+            SqlDataReader reader = this.GetData(sql);
+            List<Donor> donors = new List<Donor>();
 
-        
+            if (reader.Read())
+            {
+                Donor donor = new Donor();
+                donor.DonorID = Convert.ToInt32(reader["DonorID"]);
+                donor.FirstName = reader["FirstName"].ToString();
+                donor.Lastname = reader["LastName"].ToString();
+                donor.Email = reader["Email"].ToString();
+                donor.Username = reader["Username"].ToString();
+                donor.Password = reader["Password"].ToString();
+                donor.Gender = reader["Gender"].ToString();
+                donor.BloodGroup = reader["BloodGroup"].ToString();
+                return donor;
+
+            }
+
+            return null;
+
+        }
+
+
         public int UpdateDonor(Donor donor)
         {
             string sql = "INSERT INTO Donors (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup) VALUES ('" + donor.FirstName + "','" + donor.Lastname + "','" + donor.Email + "''" + donor.Username + "','" + donor.Password + "','" + donor.Gender + "','" + donor.BloodGroup + "')";

@@ -2,6 +2,7 @@
 using DonationHub.Data_Access_Layer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,12 @@ namespace DonationHub.Business_Logic_Layer
     class OrganisationService
     {
         OrganisationDataAccess organisationDataAccess ;
+        //UserDataAccess userDataAccess;
 
         public OrganisationService()
         {
             this.organisationDataAccess = new OrganisationDataAccess();
+            //this.userDataAccess = new UserDataAccess();
         }
 
         public object OrganisationDataAccess { get; private set; }
@@ -39,8 +42,12 @@ namespace DonationHub.Business_Logic_Layer
             //OrganisationID
             return this.organisationDataAccess.UpdateOrganisation(user);
         }
-        
-        
+        public int GetOrganisation(string username)
+        {
+            return this.organisationDataAccess.GetOrganisationID(username);
+        }
+
+
     }
     
 }

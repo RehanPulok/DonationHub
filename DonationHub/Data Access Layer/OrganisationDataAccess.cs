@@ -92,6 +92,17 @@ namespace DonationHub.Data_Access_Layer
             string sql = "DELETE FROM Users WHERE ID=" + organisationID;
             return this.ExecuteQuery(sql);
         }
+        public int GetOrganisationID(string username)
+        {
+            string sql = "SELECT ID FROM Users WHERE Username= '" + username + "'AND UserType= '" + 3 + "'";
+            SqlDataReader reader = this.GetData(sql);            
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["ID"]);
+
+            }
+            return -1;
+        }
 
     }
 }

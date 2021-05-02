@@ -8,10 +8,10 @@ namespace DonationHub.Data_Access_Layer.Entities
 {
     class MoneyDonation
     {
-        public int CardNumber { get; set; }
+        public long CardNumber { get; set; }
         public int CardPin { get; set; }
         public int CardAmount { get; set; }
-        public int MobileNumber { get; set; }
+        public long MobileNumber { get; set; }
         public int BkashPin { get; set; }
         public int BkashAmount { get; set; }
 

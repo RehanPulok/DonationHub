@@ -143,7 +143,7 @@ namespace DonationHub
         #endregion
 
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.TextBox UserNameTextBox;
+        public System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Button LoginButton;
