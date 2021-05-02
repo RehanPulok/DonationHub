@@ -49,14 +49,18 @@
   <ItemGroup>
     <Compile Include="Business Logic Layer\AdminService.cs" />
     <Compile Include="Business Logic Layer\DonorService.cs" />
+    <Compile Include="Business Logic Layer\LoginService.cs" />
     <Compile Include="Business Logic Layer\OrganisationService.cs" />
     <Compile Include="Data Access Layer\AdminDataAccess.cs" />
     <Compile Include="Data Access Layer\DataAccess.cs" />
     <Compile Include="Data Access Layer\DonorDataAccess.cs" />
     <Compile Include="Data Access Layer\Entities\Donor.cs" />
     <Compile Include="Data Access Layer\Entities\FoodDonation.cs" />
+    <Compile Include="Data Access Layer\Entities\GovtListOfVolunteerOrganisation.cs" />
     <Compile Include="Data Access Layer\Entities\MoneyDonation.cs" />
+    <Compile Include="Data Access Layer\Entities\User.cs" />
     <Compile Include="Data Access Layer\Entities\VolunteerOrganisation.cs" />
+    <Compile Include="Data Access Layer\LoginDataAcces.cs" />
     <Compile Include="Data Access Layer\OrganisationDataAccess.cs" />
     <Compile Include="Presentation Layer\AddOrganisation.cs">
       <SubType>Form</SubType>

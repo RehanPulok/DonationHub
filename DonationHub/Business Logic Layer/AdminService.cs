@@ -10,34 +10,62 @@ namespace DonationHub.Business_Logic_Layer
 {
     class AdminService
     {
-        AdminDataAccess adminDataAccess= new AdminDataAccess();
-        OrganisationDataAccess organisationDataAccess= new OrganisationDataAccess();
+        AdminDataAccess adminDataAccess;
+        OrganisationDataAccess organisationDataAccess;
+        LoginDataAcces loginDataAcces;
 
-        public List<Donor> GetAllUsers()
+        public AdminService()
+        {
+            this.adminDataAccess = new AdminDataAccess();
+            this.organisationDataAccess = new OrganisationDataAccess();
+            this.loginDataAcces = new LoginDataAcces();
+        }
+
+        public List<User> GetAllUsers()
         {
             return this.adminDataAccess.GetUsers();
         }
-        public int AddNewUser(int userID, string firstName, string LasttName, string email, string username, string password,string address, string gender, string bloodGroup)
+
+
+        public int AddNewUser( string firstName, string LastName, string email, string username, string password, string gender, string address, string bloodGroup,string organisationName, int govtLicenseNo, int userType)
         {
-            Donor donor = new Donor() { DonorID = userID, FirstName = firstName, Lastname = LasttName, Email = email, Username = username, Password = password,Address=address, Gender = gender, BloodGroup = bloodGroup };
+            User donor = new User() { FirstName = firstName, LastName = LastName, Email = email, Username = username, Password = password, Gender = gender, Address = address, BloodGroup = bloodGroup,OrganisationName=organisationName, GovtLicenseNo=govtLicenseNo, UserType= userType };
             return this.adminDataAccess.AddUser(donor);
         }
 
         public int DeleteUser(int id)
         {
-            Donor donor = new Donor() { DonorID = id };
+            User user = new User() { ID = id };
             return this.adminDataAccess.DeleteUser(id);
         }
-        public int AddNewOrganisation( string OrganisationName, string email, string username, string password, int govtLicenseNO)
+        public int AddNewOrganisation( string OrganisationName, string email, string username, string password, int govtLicenseNO, int userType)
         {
-            VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation() { OrganisationName = OrganisationName, Email = email, Username = username, Password = password, GovtLicenseNo = govtLicenseNO };
+            User volunteerOrganisation = new User() { OrganisationName = OrganisationName, Email = email, Username = username, Password = password, GovtLicenseNo = govtLicenseNO, UserType = userType };
             return this.organisationDataAccess.AddOrganisation(volunteerOrganisation);
         }
         public int DeleteOrganisation(int id)
         {
-            VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation() { OrganisationID = id };
+            User volunteerOrganisation = new User() { ID = id };
             return this.organisationDataAccess.DeleteOrganisation(id);
         }
-        
+
+        public int GovtLicenseValidation(int govtLicenseNo, string organisationName  )
+        {
+            GovtListOfVolunteerOrganisation govtListOfVolunteerOrganisation = new GovtListOfVolunteerOrganisation()
+            {
+                GovtLicenseNo = govtLicenseNo,
+                OrganisationName= organisationName
+                 
+
+                
+
+            };
+
+            return adminDataAccess.OrganisationLoginValidation(govtListOfVolunteerOrganisation);
+
+
+
+        }
+
     }
 }

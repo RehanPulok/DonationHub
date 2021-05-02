@@ -48,7 +48,7 @@ namespace DonationHub.Presentation_Layer
             adminHome.Show();
             this.Hide();
         }
-
+        /*
         private void Admin_Load(object sender, EventArgs e)
         {
             OrganisationService organisationService = new OrganisationService();
@@ -60,8 +60,14 @@ namespace DonationHub.Presentation_Layer
             OrganisationService organisationService = new OrganisationService();
             OrganisationListDataGridView.DataSource= organisationService.GetAllVolunteerOrganisations();
         }
+        */
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrganisationListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

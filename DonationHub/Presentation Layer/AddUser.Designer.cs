@@ -30,6 +30,8 @@ namespace DonationHub.Presentation_Layer
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BackButtonAdmin = new System.Windows.Forms.Button();
+            this.LogoutButtonAdmin = new System.Windows.Forms.Button();
             this.BloodGroupComboBox = new System.Windows.Forms.ComboBox();
             this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
             this.MaleRadioButton = new System.Windows.Forms.RadioButton();
@@ -48,15 +50,17 @@ namespace DonationHub.Presentation_Layer
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BackButtonAdmin = new System.Windows.Forms.Button();
-            this.LogoutButtonAdmin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.AddressTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.AddressTextBox);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.BackButtonAdmin);
             this.groupBox1.Controls.Add(this.LogoutButtonAdmin);
             this.groupBox1.Controls.Add(this.BloodGroupComboBox);
@@ -84,6 +88,26 @@ namespace DonationHub.Presentation_Layer
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // BackButtonAdmin
+            // 
+            this.BackButtonAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButtonAdmin.Location = new System.Drawing.Point(-5, 562);
+            this.BackButtonAdmin.Name = "BackButtonAdmin";
+            this.BackButtonAdmin.Size = new System.Drawing.Size(107, 38);
+            this.BackButtonAdmin.TabIndex = 32;
+            this.BackButtonAdmin.Text = "Back";
+            this.BackButtonAdmin.UseVisualStyleBackColor = true;
+            // 
+            // LogoutButtonAdmin
+            // 
+            this.LogoutButtonAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutButtonAdmin.Location = new System.Drawing.Point(471, -42);
+            this.LogoutButtonAdmin.Name = "LogoutButtonAdmin";
+            this.LogoutButtonAdmin.Size = new System.Drawing.Size(107, 38);
+            this.LogoutButtonAdmin.TabIndex = 31;
+            this.LogoutButtonAdmin.Text = "Logout";
+            this.LogoutButtonAdmin.UseVisualStyleBackColor = true;
+            // 
             // BloodGroupComboBox
             // 
             this.BloodGroupComboBox.FormattingEnabled = true;
@@ -96,7 +120,7 @@ namespace DonationHub.Presentation_Layer
             "AB-",
             "O+",
             "O-"});
-            this.BloodGroupComboBox.Location = new System.Drawing.Point(220, 404);
+            this.BloodGroupComboBox.Location = new System.Drawing.Point(220, 468);
             this.BloodGroupComboBox.Name = "BloodGroupComboBox";
             this.BloodGroupComboBox.Size = new System.Drawing.Size(121, 21);
             this.BloodGroupComboBox.TabIndex = 18;
@@ -105,7 +129,7 @@ namespace DonationHub.Presentation_Layer
             // 
             this.FemaleRadioButton.AutoSize = true;
             this.FemaleRadioButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FemaleRadioButton.Location = new System.Drawing.Point(326, 349);
+            this.FemaleRadioButton.Location = new System.Drawing.Point(326, 413);
             this.FemaleRadioButton.Name = "FemaleRadioButton";
             this.FemaleRadioButton.Size = new System.Drawing.Size(89, 27);
             this.FemaleRadioButton.TabIndex = 17;
@@ -117,7 +141,7 @@ namespace DonationHub.Presentation_Layer
             // 
             this.MaleRadioButton.AutoSize = true;
             this.MaleRadioButton.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaleRadioButton.Location = new System.Drawing.Point(220, 351);
+            this.MaleRadioButton.Location = new System.Drawing.Point(220, 415);
             this.MaleRadioButton.Name = "MaleRadioButton";
             this.MaleRadioButton.Size = new System.Drawing.Size(71, 27);
             this.MaleRadioButton.TabIndex = 16;
@@ -176,7 +200,7 @@ namespace DonationHub.Presentation_Layer
             // AddButtonUser
             // 
             this.AddButtonUser.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButtonUser.Location = new System.Drawing.Point(220, 494);
+            this.AddButtonUser.Location = new System.Drawing.Point(220, 515);
             this.AddButtonUser.Name = "AddButtonUser";
             this.AddButtonUser.Size = new System.Drawing.Size(107, 38);
             this.AddButtonUser.TabIndex = 8;
@@ -188,7 +212,7 @@ namespace DonationHub.Presentation_Layer
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(73, 404);
+            this.label8.Location = new System.Drawing.Point(73, 468);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 23);
             this.label8.TabIndex = 7;
@@ -198,7 +222,7 @@ namespace DonationHub.Presentation_Layer
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(124, 351);
+            this.label7.Location = new System.Drawing.Point(124, 415);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 23);
             this.label7.TabIndex = 6;
@@ -264,26 +288,6 @@ namespace DonationHub.Presentation_Layer
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
-            // BackButtonAdmin
-            // 
-            this.BackButtonAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButtonAdmin.Location = new System.Drawing.Point(-5, 562);
-            this.BackButtonAdmin.Name = "BackButtonAdmin";
-            this.BackButtonAdmin.Size = new System.Drawing.Size(107, 38);
-            this.BackButtonAdmin.TabIndex = 32;
-            this.BackButtonAdmin.Text = "Back";
-            this.BackButtonAdmin.UseVisualStyleBackColor = true;
-            // 
-            // LogoutButtonAdmin
-            // 
-            this.LogoutButtonAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutButtonAdmin.Location = new System.Drawing.Point(471, -42);
-            this.LogoutButtonAdmin.Name = "LogoutButtonAdmin";
-            this.LogoutButtonAdmin.Size = new System.Drawing.Size(107, 38);
-            this.LogoutButtonAdmin.TabIndex = 31;
-            this.LogoutButtonAdmin.Text = "Logout";
-            this.LogoutButtonAdmin.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,6 +309,24 @@ namespace DonationHub.Presentation_Layer
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // AddressTextBox
+            // 
+            this.AddressTextBox.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressTextBox.Location = new System.Drawing.Point(220, 357);
+            this.AddressTextBox.Name = "AddressTextBox";
+            this.AddressTextBox.Size = new System.Drawing.Size(195, 32);
+            this.AddressTextBox.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(117, 357);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 23);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Address";
             // 
             // AddUser
             // 
@@ -347,5 +369,7 @@ namespace DonationHub.Presentation_Layer
         private System.Windows.Forms.Button BackButtonAdmin;
         private System.Windows.Forms.Button LogoutButtonAdmin;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox AddressTextBox;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -97,6 +97,7 @@ namespace DonationHub.Presentation_Layer
             this.searchOrganisationByIDToolStripMenuItem.Name = "searchOrganisationByIDToolStripMenuItem";
             this.searchOrganisationByIDToolStripMenuItem.Size = new System.Drawing.Size(155, 20);
             this.searchOrganisationByIDToolStripMenuItem.Text = "Search Organisation by ID";
+            this.searchOrganisationByIDToolStripMenuItem.Click += new System.EventHandler(this.searchOrganisationByIDToolStripMenuItem_Click);
             // 
             // ViewOrganisation
             // 

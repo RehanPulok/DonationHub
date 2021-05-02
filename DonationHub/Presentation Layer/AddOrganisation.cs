@@ -17,11 +17,11 @@ namespace DonationHub.Presentation_Layer
         {
             InitializeComponent();
         }
-
+        /*
         private void AddButton_Click(object sender, EventArgs e)
         {
             AdminService adminService = new AdminService();
-            int result= adminService.AddNewOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text));
+            int result= adminService.AddNewOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text),3);
             if (result>0)
             {
                 MessageBox.Show("Volunteer Organisation added successfully");
@@ -39,6 +39,7 @@ namespace DonationHub.Presentation_Layer
                 admin.Show();
             }
         }
+        */
 
         private void BackButtonAdmin_Click(object sender, EventArgs e)
         {

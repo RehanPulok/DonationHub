@@ -19,6 +19,8 @@ namespace DonationHub.Business_Logic_Layer
 
         public object DonorDataAccess { get; private set; }
 
+         
+
         public List<Donor> GetAllDonors()
         {
             return this.donorDataAccess.GetDonors();

@@ -43,7 +43,7 @@ namespace DonationHub.Presentation_Layer
         {
 
         }
-
+        /*
         private void DeleteOrganisationButton_Click(object sender, EventArgs e)
         {
             AdminService adminService = new AdminService();
@@ -66,5 +66,6 @@ namespace DonationHub.Presentation_Layer
             }
 
         }
+        */
     }
 }

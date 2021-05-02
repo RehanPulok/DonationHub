@@ -96,7 +96,7 @@ namespace DonationHub.Presentation_Layer
             this.DeleteOrganisationButton.TabIndex = 23;
             this.DeleteOrganisationButton.Text = "Delete";
             this.DeleteOrganisationButton.UseVisualStyleBackColor = true;
-            this.DeleteOrganisationButton.Click += new System.EventHandler(this.DeleteOrganisationButton_Click);
+            //this.DeleteOrganisationButton.Click += new System.EventHandler(this.DeleteOrganisationButton_Click);
             // 
             // label1
             // 

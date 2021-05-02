@@ -140,7 +140,7 @@ namespace DonationHub.Presentation_Layer
             this.AddButton.TabIndex = 8;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+           // this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // label11
             // 

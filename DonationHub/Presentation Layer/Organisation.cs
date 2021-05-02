@@ -47,11 +47,12 @@ namespace DonationHub.Presentation_Layer
         {
 
         }
-
+        /*
         private void Organisation_Load(object sender, EventArgs e)
         {
             OrganisationService organisationService = new OrganisationService();
             EventDataGridView.DataSource = organisationService.GetAllVolunteerOrganisations();
         }
+        */
     }
 }

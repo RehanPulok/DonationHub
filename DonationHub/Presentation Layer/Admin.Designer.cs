@@ -57,6 +57,7 @@ namespace DonationHub.Presentation_Layer
             this.OrganisationListDataGridView.Name = "OrganisationListDataGridView";
             this.OrganisationListDataGridView.Size = new System.Drawing.Size(334, 515);
             this.OrganisationListDataGridView.TabIndex = 25;
+            this.OrganisationListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrganisationListDataGridView_CellContentClick);
             // 
             // groupBox1
             // 
@@ -115,7 +116,7 @@ namespace DonationHub.Presentation_Layer
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
-            this.Load += new System.EventHandler(this.Admin_Load);
+            //this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrganisationListDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

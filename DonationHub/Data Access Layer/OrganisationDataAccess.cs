@@ -11,21 +11,21 @@ namespace DonationHub.Data_Access_Layer
 {
     class OrganisationDataAccess:DataAccess
     {
-        public List<VolunteerOrganisation> GetOrganisations()
+        public List<User> GetOrganisations()
         {
-            string sql = "SELECT * FROM VolunteerOrganisations";
+            string sql = "SELECT ID,OrganisationName,Email FROM Users WHERE UserType= "+3;
             SqlDataReader reader = this.GetData(sql);
-            List<VolunteerOrganisation> volunteerOrganisations = new List<VolunteerOrganisation>();
+            List<User> volunteerOrganisations = new List<User>();
 
             while (reader.Read())
             {
-                VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation();
-                volunteerOrganisation.OrganisationID = Convert.ToInt32(reader["OrganisationID"]);
+                User volunteerOrganisation = new User();
+                volunteerOrganisation.ID = Convert.ToInt32(reader["ID"]);
                 volunteerOrganisation.OrganisationName = reader["OrganisationName"].ToString();
                 volunteerOrganisation.Email = reader["Email"].ToString();
-                volunteerOrganisation.Username = reader["Username"].ToString();
-                volunteerOrganisation.Password = reader["Password"].ToString();
-                volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                //volunteerOrganisation.Username = reader["Username"].ToString();
+                //volunteerOrganisation.Password = reader["Password"].ToString();
+                //volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
 
                 volunteerOrganisations.Add(volunteerOrganisation);
                 
@@ -34,26 +34,26 @@ namespace DonationHub.Data_Access_Layer
 
         }
 
-        internal void AddOrganisation(object volunteerOrganisation, object volunteerorganisation)
+        internal void AddOrganisation(object User, object user)
         {
             throw new NotImplementedException();
         }
 
-        public VolunteerOrganisation GetOrganisation(int organisationID)
+        public User GetOrganisation(int organisationID)
         {
-            string sql = "SELECT * FROM VolunteerOrganisations WHERE OrganisationID = "+organisationID;
+            string sql = "SELECT * FROM Users WHERE ID = "+organisationID;
             SqlDataReader reader = this.GetData(sql);
-            List<VolunteerOrganisation> volunteerOrganisations = new List<VolunteerOrganisation>();
+            List<User> volunteerOrganisations = new List<User>();
 
             if (reader.Read())
             {
-                VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation();
-                volunteerOrganisation.OrganisationID = Convert.ToInt32(reader["OrganisationID"]);
+                User volunteerOrganisation = new User();
+                volunteerOrganisation.ID = Convert.ToInt32(reader["ID"]);
                 volunteerOrganisation.OrganisationName = reader["OrganisationName"].ToString();
                 volunteerOrganisation.Email = reader["Email"].ToString();
-                volunteerOrganisation.Username = reader["Username"].ToString();
-                volunteerOrganisation.Password = reader["Password"].ToString();
-                volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                //volunteerOrganisation.Username = reader["Username"].ToString();
+                //volunteerOrganisation.Password = reader["Password"].ToString();
+                //volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
                 return volunteerOrganisation;
                 
             }
@@ -61,20 +61,35 @@ namespace DonationHub.Data_Access_Layer
             return null;
 
         }
-
-        public int AddOrganisation(VolunteerOrganisation volunteerOrganisation)
+        public int SearchOrganisation(int organisationID)
         {
-            string sql = "INSERT INTO VolunteerOrganisations (OrganisationName, Email, Username, Password, GovtLicenseNo) VALUES ('" + volunteerOrganisation.OrganisationName + "','" + volunteerOrganisation.Email + "','" + volunteerOrganisation.Username + "','" + volunteerOrganisation.Password + "','" + volunteerOrganisation.GovtLicenseNo + "')";
+            string sql = "SELECT * FROM Users WHERE ID = " + organisationID;
+            SqlDataReader reader = this.GetData(sql);
+            ;
+
+            if (reader.Read())
+            {
+                return 1;
+
+            }
+            //volunteerOrganisations.Add(volunteerOrganisation);
+            return -1;
+
+        }
+
+        public int AddOrganisation(User volunteerOrganisation)
+        {
+            string sql = "INSERT INTO Users (OrganisationName, Email, Username, Password, GovtLicenseNo) VALUES ('" + volunteerOrganisation.OrganisationName + "','" + volunteerOrganisation.Email + "','" + volunteerOrganisation.Username + "','" + volunteerOrganisation.Password + "','" + volunteerOrganisation.GovtLicenseNo + "')";
             return this.ExecuteQuery(sql);
         }
-        public int UpdateOrganisation(VolunteerOrganisation volunteerOrganisation)
+        public int UpdateOrganisation(User volunteerOrganisation)
         {
-            string sql = "UPDATE VolunteerOrganisations SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "', Username='" + volunteerOrganisation.Username + "', Password='" + volunteerOrganisation.Password + "', GovtLicenseNo='" + volunteerOrganisation.GovtLicenseNo + "' WHERE OrganisationID=" + volunteerOrganisation.OrganisationID;
+            string sql = "UPDATE Users SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "', Username='" + volunteerOrganisation.Username + "', Password='" + volunteerOrganisation.Password + "', GovtLicenseNo='" + volunteerOrganisation.GovtLicenseNo + "' WHERE ID=" + volunteerOrganisation.ID;
             return this.ExecuteQuery(sql);
         }
         public int DeleteOrganisation(int organisationID)
         {
-            string sql = "DELETE FROM VolunteerOrganisations WHERE OrganisationID=" + organisationID;
+            string sql = "DELETE FROM Users WHERE ID=" + organisationID;
             return this.ExecuteQuery(sql);
         }
 

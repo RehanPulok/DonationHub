@@ -10,129 +10,189 @@ namespace DonationHub.Data_Access_Layer
 {
     class AdminDataAccess:DataAccess
     {
-        public List<Donor> GetUsers()
+        public List<User> GetDonors()
         {
-            string sql = "SELECT * FROM Donors";
+            string sql = "SELECT * FROM Users WHERE UserType= "+2;
             SqlDataReader reader = this.GetData(sql);
-            List<Donor> donors = new List<Donor>();
+            List<User> donors = new List<User>();
 
             while (reader.Read())
             {
-                Donor donor = new Donor();
-                donor.DonorID = Convert.ToInt32(reader["DonorID"]);
-                donor.FirstName = reader["FirstName"].ToString();
-                donor.Lastname = reader["LastName"].ToString();
-                donor.Email = reader["Email"].ToString();
-                donor.Username = reader["Username"].ToString();
-                donor.Password = reader["Password"].ToString();                
-                donor.Gender = reader["Gender"].ToString();
-                donor.BloodGroup = reader["BloodGroup"].ToString();
-                donor.DonorID = Convert.ToInt32(reader["DonorID"]);
-                donor.Address = reader["Address"].ToString();
+                User users = new User();
+                users.ID = Convert.ToInt32(reader["ID"]);
+                users.FirstName = reader["FirstName"].ToString();
+                users.LastName = reader["LastName"].ToString();
+                users.Email = reader["Email"].ToString();
+                users.Username = reader["Username"].ToString();
+                users.Password = reader["Password"].ToString();                
+                users.Gender = reader["Gender"].ToString();
+                users.BloodGroup = reader["BloodGroup"].ToString();
+                
+                users.Address = reader["Address"].ToString();
+                users.UserType = Convert.ToInt32(reader["UserType"]);
 
 
-                donors.Add(donor);
+                donors.Add(users);
 
             }
             return donors;
 
         }
-        public Donor GetUser(int ID)
+        public List<User> GetUsers()
         {
-            string sql = "SELECT * FROM Donors WHERE DonorID = " + ID;
+            string sql = "SELECT * FROM Users ";
             SqlDataReader reader = this.GetData(sql);
-            List<Donor> donors = new List<Donor>();
-
-            if (reader.Read())
-            {
-                Donor donor = new Donor();
-                donor.DonorID = Convert.ToInt32(reader["DonorID"]);
-                donor.FirstName = reader["FirstName"].ToString();
-                donor.Lastname = reader["LastName"].ToString();
-                donor.Email = reader["Email"].ToString();
-                donor.Username = reader["Username"].ToString();
-                donor.Password = reader["Password"].ToString();
-                donor.Gender = reader["Gender"].ToString();
-                donor.BloodGroup = reader["BloodGroup"].ToString();
-                return donor;
-
-            }
-
-            
-            
-                
-                return null;
-            
-
-        }
-
-        public List<VolunteerOrganisation> GetOrganisations()
-        {
-            string sql = "SELECT * FROM VolunteerOrganisations";
-            SqlDataReader reader = this.GetData(sql);
-            List<VolunteerOrganisation> volunteerOrganisations = new List<VolunteerOrganisation>();
+            List<User> donors = new List<User>();
 
             while (reader.Read())
             {
-                VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation();
-                volunteerOrganisation.OrganisationID = Convert.ToInt32(reader["OrganisationID"]);
-                volunteerOrganisation.OrganisationName = reader["OrganisationName"].ToString();
-                volunteerOrganisation.Email = reader["Email"].ToString();
-                volunteerOrganisation.Username = reader["Username"].ToString();
-                volunteerOrganisation.Password = reader["Password"].ToString();
-                volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                User users = new User();
+                users.ID = Convert.ToInt32(reader["ID"]);
+                users.FirstName = reader["FirstName"].ToString();
+                users.LastName = reader["LastName"].ToString();
+                users.Email = reader["Email"].ToString();
+                users.Username = reader["Username"].ToString();
+                users.Password = reader["Password"].ToString();
+                users.Gender = reader["Gender"].ToString();
+                users.BloodGroup = reader["BloodGroup"].ToString();
+                //users.DonorID = Convert.ToInt32(reader["DonorID"]);
+                users.Address = reader["Address"].ToString();
+                users.OrganisationName = reader["OrganisationName"].ToString();
+                //users.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                users.UserType = Convert.ToInt32(reader["UserType"]);
 
-                volunteerOrganisations.Add(volunteerOrganisation);
+
+                donors.Add(users);
 
             }
-            return volunteerOrganisations;
+            return donors;
 
         }
-
-        public VolunteerOrganisation GetOrganisation(int ID)
+        public User GetUser(int ID)
         {
-            string sql = "SELECT * FROM VolunteerOrganisations WHERE OrganisationID = " + ID;
+            string sql = "SELECT * FROM Users WHERE ID= " + ID;
             SqlDataReader reader = this.GetData(sql);
-            List<VolunteerOrganisation> volunteerOrganisations = new List<VolunteerOrganisation>();
+            List<User> donors = new List<User>();
 
             if (reader.Read())
             {
-                VolunteerOrganisation volunteerOrganisation = new VolunteerOrganisation();
-                volunteerOrganisation.OrganisationID = Convert.ToInt32(reader["OrganisationID"]);
-                volunteerOrganisation.OrganisationName = reader["OrganisationName"].ToString();
-                volunteerOrganisation.Email = reader["Email"].ToString();
-                volunteerOrganisation.Username = reader["Username"].ToString();
-                volunteerOrganisation.Password = reader["Password"].ToString();
-                volunteerOrganisation.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
-                return volunteerOrganisation;
+                User users = new User();
+                users.ID = Convert.ToInt32(reader["DonorID"]);
+                users.FirstName = reader["FirstName"].ToString();
+                users.LastName = reader["LastName"].ToString();
+                users.Email = reader["Email"].ToString();
+                users.Username = reader["Username"].ToString();
+                users.Password = reader["Password"].ToString();
+                users.Gender = reader["Gender"].ToString();
+                users.BloodGroup = reader["BloodGroup"].ToString();
+                //users.DonorID = Convert.ToInt32(reader["DonorID"]);
+                users.Address = reader["Address"].ToString();
+                users.UserType = Convert.ToInt32(reader["UserType"]);
+
+                return users;
+                //donors.Add(users);
 
             }
+            
+
+
+
+
+            return null;
+            
+
+        }
+
+        public List<User> GetOrganisations()
+        {
+            string sql = "SELECT * FROM Users WHERE UserType= " + 3;
+            SqlDataReader reader = this.GetData(sql);
+            List<User> users = new List<User>();
+
+            while (reader.Read())
+            {
+                User user = new User();
+                user.ID = Convert.ToInt32(reader["ID"]);
+                user.OrganisationName = reader["OrganisationName"].ToString();
+                user.Email = reader["Email"].ToString();
+                user.Username = reader["Username"].ToString();
+                user.Password = reader["Password"].ToString();
+                user.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                user.UserType = Convert.ToInt32(reader["UserType"]);
+
+                users.Add(user);
+
+            }
+            return users;
+
+        }
+
+        public User GetOrganisation(int ID)
+        {
+            string sql = "SELECT * FROM Users WHERE ID= " + ID;
+            SqlDataReader reader = this.GetData(sql);
+            List<User> users = new List<User>();
+
+            while (reader.Read())
+            {
+                User user = new User();
+                user.ID = Convert.ToInt32(reader["ID"]);
+                user.OrganisationName = reader["OrganisationName"].ToString();
+                user.Email = reader["Email"].ToString();
+                user.Username = reader["Username"].ToString();
+                user.Password = reader["Password"].ToString();
+                user.GovtLicenseNo = Convert.ToInt32(reader["GovtLicenseNo"]);
+                user.UserType = Convert.ToInt32(reader["UserType"]);
+
+                //users.Add(user);
+                return user;
+
+            }
+            
+
             return null;
         }
         
 
-        public int DeleteUser(int donorID)
+        public int DeleteUser(int ID)
         {
-            string sql = "DELETE FROM Donors WHERE DonorID=" + donorID;
+            string sql = "DELETE FROM Users WHERE ID=" + ID;
             return this.ExecuteQuery(sql);
         }
 
-        public int AddUser(Donor donor)
+        public int AddUser(User user)
         {
-            string sql = "INSERT INTO Donors (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup) VALUES ('" + donor.FirstName + "','" + donor.Lastname + "','" + donor.Email + "''" + donor.Username + "','" + donor.Password + "','" + donor.Gender + "','" + donor.BloodGroup + "')";
+            //string sql = "INSERT INTO Users (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup, Address, UserType) VALUES ('" + user.FirstName + "','" + user.LastName + "','" + user.Email + "''" + user.Username + "','" + user.Password + "','" + user.Gender + "','" + user.BloodGroup + "','" + user.Address + "','" + user.UserType + "')";
+            string sql = "INSERT INTO Users (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup, Address,OrganisationName, GovtLicenseNo, UserType) VALUES ('" + user.FirstName + "','" + user.LastName + "','" + user.Email + "','" + user.Username + "','" + user.Password + "','" + user.Gender + "','" + user.BloodGroup + "','"+user.Address+"','"+user.OrganisationName+"','"+user.GovtLicenseNo+"','"+user.UserType+"')";
             return this.ExecuteQuery(sql);
         }
-
-        public int AddOrganisation(VolunteerOrganisation volunteerOrganisation)
+        
+        public int AddOrganisation(User user)
         {
-            string sql = "INSERT INTO VolunteerOrganisations (OrganisationName, Email, Username, Password, GovtLicenseNo) VALUES ('" + volunteerOrganisation.OrganisationName + "','" + volunteerOrganisation.Email + "','" + volunteerOrganisation.Username + "','" + volunteerOrganisation.Password + "','" + volunteerOrganisation.GovtLicenseNo + "')";
+            string sql = "INSERT INTO Users (OrganisationName, Email, Username, Password, GovtLicenseNo, UserType) VALUES ('" + user.OrganisationName + "','" + user.Email + "','" + user.Username + "','" + user.Password + "','" + user.GovtLicenseNo + "','" + user.UserType + "')";
             return this.ExecuteQuery(sql);
         }
 
         public int DeleteOrganisation(int organisationID)
         {
-            string sql = "DELETE FROM VolunteerOrganisations WHERE OrganisationID=" + organisationID;
+            string sql = "DELETE FROM Users WHERE ID=" + organisationID;
             return this.ExecuteQuery(sql);
         }
+
+        public int OrganisationLoginValidation(GovtListOfVolunteerOrganisation govtListOfVolunteerOrganisation)
+        {
+
+
+            string sql = "SELECT OrganistionName From GovtListOfVolunteerOrganisation WHERE GovtLicenseNo= " + govtListOfVolunteerOrganisation.GovtLicenseNo ;
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+
+                return 1;
+            }
+            return -1;
+
+        }
+
     }
 }

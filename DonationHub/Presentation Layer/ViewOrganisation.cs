@@ -39,11 +39,13 @@ namespace DonationHub.Presentation_Layer
             this.Hide();
         }
 
+        /*
         private void ViewOrganisation_Load(object sender, EventArgs e)
         {
             OrganisationService organisationService = new OrganisationService();
             EventDataGridView.DataSource= organisationService.GetAllVolunteerOrganisations();
         }
+        */
 
         private void EventDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -55,6 +57,19 @@ namespace DonationHub.Presentation_Layer
             UpdateUser updateUser = new UpdateUser();
             this.Hide();
             updateUser.Show();
+        }
+
+        private void ViewOrganisation_Load(object sender, EventArgs e)
+        {
+            OrganisationService organisationService = new OrganisationService();
+            EventDataGridView.DataSource= organisationService.GetAllVolunteerOrganisations();
+        }
+
+        private void searchOrganisationByIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SerachOrganisaiton searchorganisation = new SerachOrganisaiton();
+            this.Hide();
+            searchorganisation.Show();
         }
     }
 }

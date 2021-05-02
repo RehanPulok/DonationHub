@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,9 +39,18 @@ namespace DonationHub.Presentation_Layer
 
         private void SearchOrganisationButton_Click(object sender, EventArgs e)
         {
-            Organisation organisation = new Organisation();
-            this.Hide();
-            organisation.Show();
+            OrganisationService organisationService = new OrganisationService();
+            int result= organisationService.GetSearchedOrganisation(Convert.ToInt32(SearchOrganisationTextBox.Text));
+            if (result>0)
+            {
+                Organisation organisation = new Organisation();
+                this.Hide();
+                organisation.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid ID");
+            }
         }
     }
 }

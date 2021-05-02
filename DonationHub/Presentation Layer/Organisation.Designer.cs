@@ -102,7 +102,7 @@ namespace DonationHub.Presentation_Layer
             this.Name = "Organisation";
             this.Text = "Organistion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Biddyanando_FormClosing);
-            this.Load += new System.EventHandler(this.Organisation_Load);
+            //this.Load += new System.EventHandler(this.Organisation_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).EndInit();

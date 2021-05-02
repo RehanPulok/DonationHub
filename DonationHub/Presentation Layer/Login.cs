@@ -1,4 +1,5 @@
-﻿using DonationHub.Presentation_Layer;
+﻿using DonationHub.Business_Logic_Layer;
+using DonationHub.Presentation_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,9 +38,31 @@ namespace DonationHub
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            ViewOrganisation viewOrganisation = new ViewOrganisation();
-            this.Hide();
-            viewOrganisation.Show();
+            LoginService loginService = new LoginService();
+            int result = loginService.LoginValidation(UserNameTextBox.Text, PasswordTextBox.Text);
+            if (result==1)
+            {
+                AdminHome adminHome = new AdminHome();
+                this.Hide();
+                adminHome.Show();
+            }
+            else if (result==2)
+            {
+                ViewOrganisation viewOrganisation = new ViewOrganisation();
+                this.Hide();
+                viewOrganisation.Show();
+            }
+            else if (result==3)
+            {
+                OrganisationHome organisationHome = new OrganisationHome();
+                this.Hide();
+                organisationHome.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username or Password");
+            }
+            
         }
     }
 }

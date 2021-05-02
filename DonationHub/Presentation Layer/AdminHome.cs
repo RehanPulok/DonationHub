@@ -54,8 +54,7 @@ namespace DonationHub.Presentation_Layer
             AddUser addUser = new AddUser();
             this.Hide();
             addUser.Show();
-            //AdminService adminService = new AdminService();
-            //adminService.AddNewUser();
+            
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)

@@ -24,10 +24,12 @@ namespace DonationHub.Presentation_Layer
             Application.Exit();
         }
 
+        /*
         private void UpdateButtonOrganisationHome_Click(object sender, EventArgs e)
         {
             OrganisationService organisationService = new OrganisationService();
             organisationService.UpdateExistingOrganisation(VolunteerNameTextBox.Text, VolunteerUsernameTextBox.Text, VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, Convert.ToInt32( GovtLicenseTextBox.Text) );
         }
+        */
     }
 }

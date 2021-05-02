@@ -36,13 +36,14 @@ namespace DonationHub.Data_Access_Layer
             this.command = new SqlCommand(sql, connection);
             return this.command.ExecuteNonQuery();
         }
+        
         /*
-
         ~DataAccess()
         {
             this.connection.Close();
         }
         */
+        
 
 
     }
