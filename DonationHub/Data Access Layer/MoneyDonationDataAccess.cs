@@ -12,7 +12,15 @@ namespace DonationHub.Data_Access_Layer
     {
         public int BkashDonation(MoneyDonation moneyDonatation)
         {
-            
+            string sql = "SELECT Balance From Users WHERE PhoneNumber= '" + moneyDonatation.MobileNumber + "' AND Pin= '" + moneyDonatation.BkashPin + "'";
+            SqlDataReader reader = this.GetData(sql);
+            if (reader.Read())
+            {
+
+                return Convert.ToInt32(reader["Amount"]);
+            }
+            return -1;
+
         }
         public int CardDonation(MoneyDonation moneyDonatation)
         {

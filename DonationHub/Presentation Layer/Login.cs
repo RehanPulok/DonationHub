@@ -1,4 +1,5 @@
 ﻿using DonationHub.Business_Logic_Layer;
+using DonationHub.Data_Access_Layer;
 using DonationHub.Presentation_Layer;
 using System;
 using System.Collections.Generic;
@@ -42,18 +43,21 @@ namespace DonationHub
             int result = loginService.LoginValidation(UserNameTextBox.Text, PasswordTextBox.Text);
             if (result==1)
             {
+                LoginDataAcces loginDataAccess = new LoginDataAcces();
                 AdminHome adminHome = new AdminHome();
                 this.Hide();
                 adminHome.Show();
             }
             else if (result==2)
             {
+                LoginDataAcces loginDataAccess = new LoginDataAcces();
                 ViewOrganisation viewOrganisation = new ViewOrganisation();
                 this.Hide();
                 viewOrganisation.Show();
             }
             else if (result==3)
             {
+                LoginDataAcces loginDataAccess = new LoginDataAcces();
                 OrganisationHome organisationHome = new OrganisationHome();
                 this.Hide();
                 organisationHome.Show();

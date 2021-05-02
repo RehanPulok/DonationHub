@@ -40,7 +40,10 @@ namespace DonationHub.Data_Access_Layer
         /*
         ~DataAccess()
         {
-            this.connection.Close();
+            
+                this.connection.Close();
+            
+            
         }
         */
         

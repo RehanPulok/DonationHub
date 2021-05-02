@@ -77,11 +77,7 @@ namespace DonationHub.Data_Access_Layer
 
         }
 
-        public int AddOrganisation(User volunteerOrganisation)
-        {
-            string sql = "INSERT INTO Users (OrganisationName, Email, Username, Password, GovtLicenseNo) VALUES ('" + volunteerOrganisation.OrganisationName + "','" + volunteerOrganisation.Email + "','" + volunteerOrganisation.Username + "','" + volunteerOrganisation.Password + "','" + volunteerOrganisation.GovtLicenseNo + "')";
-            return this.ExecuteQuery(sql);
-        }
+        
         public int UpdateOrganisation(User volunteerOrganisation)
         {
             string sql = "UPDATE Users SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "', Username='" + volunteerOrganisation.Username + "', Password='" + volunteerOrganisation.Password + "', GovtLicenseNo='" + volunteerOrganisation.GovtLicenseNo + "' WHERE ID=" + volunteerOrganisation.ID;
@@ -102,6 +98,28 @@ namespace DonationHub.Data_Access_Layer
 
             }
             return -1;
+        }
+        public int AddOrganisation(User user)
+        {
+            string sql = "INSERT INTO Users (OrganisationName, Email, Username, Password, GovtLicenseNo, UserType) VALUES ('" + user.OrganisationName + "','" + user.Email + "','" + user.Username + "','" + user.Password + "','" + user.GovtLicenseNo + "','" + user.UserType + "')";
+            return this.ExecuteQuery(sql);
+        }
+        public int OrganisationLoginValidation(GovtListOfVolunteerOrganisation govtListOfVolunteerOrganisation)
+        {
+
+
+            string sql = "SELECT OrganistionName From GovtListOfVolunteerOrganisation WHERE GovtLicenseNo= " + govtListOfVolunteerOrganisation.GovtLicenseNo;
+            SqlDataReader reader = this.GetData(sql);
+
+            if (reader.Read())
+            {
+
+                return 1;
+
+            }
+            return -1;
+
+
         }
 
     }

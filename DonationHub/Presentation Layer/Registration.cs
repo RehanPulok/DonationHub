@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -109,10 +110,19 @@ namespace DonationHub
                     int userType = 2;
 
                     AdminService adminService = new AdminService();
-                    adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text,null,0, userType);
-                    Login login = new Login();
-                    login.Show();
-                    this.Hide();
+                    int result = adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text,null,0, userType);
+                    if (result==1)
+                    {
+                        MessageBox.Show("New donor Added");
+                        Login login = new Login();
+                        login.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add donor");
+                    }
+                    
 
 
                 }
@@ -160,17 +170,28 @@ namespace DonationHub
                 else
                 {
                     int userType = 3;
-                    string gender = null;
+                    //string gender = null;
+                    
                     AdminService adminService = new AdminService();
-                    int result = adminService.GovtLicenseValidation(Convert.ToInt32(GovtLicenseTextBox.Text), VolunteerNameTextBox.Text);
+                    int result =adminService.AddNewOrganisation(FirstNameTextBox.Text, LastNameTextBox.Text, VolunteerEmailTextBox.Text, VolunteerUsernameTextBox.Text, VoluunteerPasswordTextBox.Text,null, BloodGroupComboBox.Text,AddressTextBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
+                    //int result = adminService.GovtLicenseValidation(Convert.ToInt32(GovtLicenseTextBox.Text), VolunteerNameTextBox.Text);
                     if (result==1)
                     {
+                        /*
                         adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
+                        MessageBox.Show("New Organisation added");
+                        
+                        */
+                        MessageBox.Show("Volunteer organisation Added");
                         Login login = new Login();
                         login.Show();
                         this.Hide();
                     }
-                    MessageBox.Show("Invalid Govt License Number or Name");
+                    else
+                    {
+                        MessageBox.Show("Invalid Govt License Number or Name");
+                    }
+                    
                     
 
 

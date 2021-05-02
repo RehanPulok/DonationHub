@@ -46,6 +46,24 @@ namespace DonationHub.Business_Logic_Layer
         {
             return this.organisationDataAccess.GetOrganisationID(username);
         }
+        public int GovtLicenseValidation(int govtLicenseNo, string organisationName)
+        {
+            
+            GovtListOfVolunteerOrganisation govtListOfVolunteerOrganisation = new GovtListOfVolunteerOrganisation()
+            {
+                GovtLicenseNo = govtLicenseNo,
+                OrganisationName = organisationName
+
+
+            };
+            //this.organisationDataAccess = new OrganisationDataAccess();
+
+            return organisationDataAccess.OrganisationLoginValidation(govtListOfVolunteerOrganisation);
+
+             
+
+
+        }
 
 
     }

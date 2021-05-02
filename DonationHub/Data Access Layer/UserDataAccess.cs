@@ -24,6 +24,12 @@ namespace DonationHub.Data_Access_Layer
             return -1;
 
         }
+        public int AddUser(User user)
+        {
+            //string sql = "INSERT INTO Users (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup, Address, UserType) VALUES ('" + user.FirstName + "','" + user.LastName + "','" + user.Email + "''" + user.Username + "','" + user.Password + "','" + user.Gender + "','" + user.BloodGroup + "','" + user.Address + "','" + user.UserType + "')";
+            string sql = "INSERT INTO Users (FirstName, Lastname,Email, Username, Password, Gender,BloodGroup, Address,OrganisationName, GovtLicenseNo, UserType) VALUES ('" + user.FirstName + "','" + user.LastName + "','" + user.Email + "','" + user.Username + "','" + user.Password + "','" + user.Gender + "','" + user.BloodGroup + "','" + user.Address + "','" + user.OrganisationName + "','" + user.GovtLicenseNo + "','" + user.UserType + "')";
+            return this.ExecuteQuery(sql);
+        }
         /*
         public int GetDonorUsername(int id)
         {

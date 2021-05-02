@@ -65,6 +65,7 @@ namespace DonationHub.Data_Access_Layer
                 donors.Add(users);
 
             }
+            
             return donors;
 
         }
@@ -167,11 +168,7 @@ namespace DonationHub.Data_Access_Layer
             return this.ExecuteQuery(sql);
         }
         
-        public int AddOrganisation(User user)
-        {
-            string sql = "INSERT INTO Users (OrganisationName, Email, Username, Password, GovtLicenseNo, UserType) VALUES ('" + user.OrganisationName + "','" + user.Email + "','" + user.Username + "','" + user.Password + "','" + user.GovtLicenseNo + "','" + user.UserType + "')";
-            return this.ExecuteQuery(sql);
-        }
+        
 
         public int DeleteOrganisation(int organisationID)
         {
@@ -179,20 +176,7 @@ namespace DonationHub.Data_Access_Layer
             return this.ExecuteQuery(sql);
         }
 
-        public int OrganisationLoginValidation(GovtListOfVolunteerOrganisation govtListOfVolunteerOrganisation)
-        {
-
-
-            string sql = "SELECT OrganistionName From GovtListOfVolunteerOrganisation WHERE GovtLicenseNo= " + govtListOfVolunteerOrganisation.GovtLicenseNo ;
-            SqlDataReader reader = this.GetData(sql);
-            if (reader.Read())
-            {
-
-                return 1;
-            }
-            return -1;
-
-        }
+        
 
     }
 }
