@@ -43,29 +43,27 @@ namespace DonationHub.Presentation_Layer
         {
 
         }
-        /*
+
         private void DeleteOrganisationButton_Click(object sender, EventArgs e)
         {
             AdminService adminService = new AdminService();
-            int result = adminService.DeleteOrganisation(Convert.ToInt32(SearchOrganisationTextBox.Text));
+            int result = adminService.DeleteUser(Convert.ToInt32(SearchOrganisationTextBox.Text));
             if (result > 0)
             {
-                MessageBox.Show("Volunteer Organisation deleted. ");
-                Admin admin = new Admin();
+                MessageBox.Show("User Deleted Successfully");
+                AdminHome adminHome = new AdminHome();
                 this.Hide();
-                admin.UpdateOrganisations();
-                admin.Show();
+                adminHome.Show();
             }
             else
             {
-                MessageBox.Show("Error in deleting Volunteer organisation");
-                Admin admin = new Admin();
+                MessageBox.Show("Error");
+                AdminHome adminHome = new AdminHome();
                 this.Hide();
-                admin.UpdateOrganisations();
-                admin.Show();
+                adminHome.Show();
             }
-
         }
-        */
+        
+
     }
 }

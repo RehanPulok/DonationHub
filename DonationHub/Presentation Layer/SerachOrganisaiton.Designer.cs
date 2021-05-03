@@ -131,7 +131,7 @@ namespace DonationHub.Presentation_Layer
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox SearchOrganisationTextBox;
+        public System.Windows.Forms.TextBox SearchOrganisationTextBox;
         private System.Windows.Forms.Button SearchOrganisationButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LogoutButtonSearchOrganisation;

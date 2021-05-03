@@ -14,6 +14,9 @@ namespace DonationHub
 {
     public partial class Registration : Form
     {
+        
+        
+
         public Registration()
         {
             InitializeComponent();
@@ -51,6 +54,9 @@ namespace DonationHub
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
+            string email = EmailTextBox.Text;
+            
+            
             if (FirstNameTextBox.Text == "")
             {
                 
@@ -91,41 +97,51 @@ namespace DonationHub
             }
             else
             {
-                if (PasswordTextBox.Text != COnfirmPasswordTextBox.Text)
+                if (email.Contains("@gmail.com") || email.Contains("@outlook.com") || email.Contains("@yahoo.com"))
                 {
-                    MessageBox.Show("Passwords need to be matched");
+                    if (PasswordTextBox.Text != COnfirmPasswordTextBox.Text)
+                    {
+                        MessageBox.Show("Passwords need to be matched");
+                    }
+
+                    else
+                    {
+                        string gender;
+                        if (MaleRadioButton.Checked = true)
+                        {
+                            gender = MaleRadioButton.Text;
+                        }
+                        else
+                        {
+                            gender = FemaleRadioButton.Text;
+                        }
+
+                        int userType = 2;
+
+                        AdminService adminService = new AdminService();
+                        int result = adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, null, 0, userType);
+                        if (result == 1)
+                        {
+                            MessageBox.Show("New donor Added");
+                            Login login = new Login();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add donor");
+                        }
+
+
+
+                    }
+
                 }
                 else
                 {
-                    string gender;
-                    if (MaleRadioButton.Checked = true)
-                    {
-                        gender = MaleRadioButton.Text;
-                    }
-                    else
-                    {
-                        gender = FemaleRadioButton.Text;
-                    }
-                    
-                    int userType = 2;
-
-                    AdminService adminService = new AdminService();
-                    int result = adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text,null,0, userType);
-                    if (result==1)
-                    {
-                        MessageBox.Show("New donor Added");
-                        Login login = new Login();
-                        login.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to add donor");
-                    }
-                    
-
-
+                    MessageBox.Show("Invalid Email address");
                 }
+                
             }
         
             
@@ -136,6 +152,7 @@ namespace DonationHub
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string email=VolunteerEmailTextBox.Text;
             if (VolunteerNameTextBox.Text == "")
             {
 
@@ -163,39 +180,49 @@ namespace DonationHub
             }
             else
             {
-                if (VolunteerConfirmPasswordTextBox.Text != VoluunteerPasswordTextBox.Text)
+                if (email.Contains("@gmail.com") || email.Contains("@outlook.com") || email.Contains("@yahoo.com"))
                 {
-                    MessageBox.Show("Passwords need to be matched");
+                    if (VolunteerConfirmPasswordTextBox.Text != VoluunteerPasswordTextBox.Text)
+                    {
+                        MessageBox.Show("Passwords need to be matched");
+                    }
+
+                    else
+                    {
+                        int userType = 3;
+                        //string gender = null;
+
+                        AdminService adminService = new AdminService();
+                        int result = adminService.AddNewOrganisation(FirstNameTextBox.Text, LastNameTextBox.Text, VolunteerEmailTextBox.Text, VolunteerUsernameTextBox.Text, VoluunteerPasswordTextBox.Text, null, BloodGroupComboBox.Text, AddressTextBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
+                        //int result = adminService.GovtLicenseValidation(Convert.ToInt32(GovtLicenseTextBox.Text), VolunteerNameTextBox.Text);
+                        if (result == 1)
+                        {
+                            /*
+                            adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
+                            MessageBox.Show("New Organisation added");
+
+                            */
+                            MessageBox.Show("Volunteer organisation Added");
+                            Login login = new Login();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Govt License Number or Name");
+                        }
+
+
+
+
+                    }
+
                 }
                 else
                 {
-                    int userType = 3;
-                    //string gender = null;
-                    
-                    AdminService adminService = new AdminService();
-                    int result =adminService.AddNewOrganisation(FirstNameTextBox.Text, LastNameTextBox.Text, VolunteerEmailTextBox.Text, VolunteerUsernameTextBox.Text, VoluunteerPasswordTextBox.Text,null, BloodGroupComboBox.Text,AddressTextBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
-                    //int result = adminService.GovtLicenseValidation(Convert.ToInt32(GovtLicenseTextBox.Text), VolunteerNameTextBox.Text);
-                    if (result==1)
-                    {
-                        /*
-                        adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, VolunteerNameTextBox.Text, Convert.ToInt32(GovtLicenseTextBox.Text), userType);
-                        MessageBox.Show("New Organisation added");
-                        
-                        */
-                        MessageBox.Show("Volunteer organisation Added");
-                        Login login = new Login();
-                        login.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Govt License Number or Name");
-                    }
-                    
-                    
-
-
+                    MessageBox.Show("Invalid Email address");
                 }
+                
             }
         }
     }

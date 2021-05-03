@@ -54,11 +54,13 @@ namespace DonationHub
                 ViewOrganisation viewOrganisation = new ViewOrganisation();
                 this.Hide();
                 viewOrganisation.Show();
+                Food food = new Food(UserNameTextBox.Text);
+                Payment payment = new Payment(UserNameTextBox.Text);
             }
             else if (result==3)
             {
                 LoginDataAcces loginDataAccess = new LoginDataAcces();
-                OrganisationHome organisationHome = new OrganisationHome();
+                OrganisationHome organisationHome = new OrganisationHome(UserNameTextBox.Text);
                 this.Hide();
                 organisationHome.Show();
             }

@@ -44,6 +44,8 @@ namespace DonationHub.Presentation_Layer
             if (result>0)
             {
                 Organisation organisation = new Organisation();
+                Payment payment = new Payment(Convert.ToInt32(SearchOrganisationTextBox.Text));
+                Food food = new Food(Convert.ToInt32(SearchOrganisationTextBox.Text));
                 this.Hide();
                 organisation.Show();
             }

@@ -148,7 +148,7 @@ namespace DonationHub.Presentation_Layer
             this.UpdateButtonOrganisationHome.TabIndex = 8;
             this.UpdateButtonOrganisationHome.Text = "Update";
             this.UpdateButtonOrganisationHome.UseVisualStyleBackColor = true;
-            //this.UpdateButtonOrganisationHome.Click += new System.EventHandler(this.UpdateButtonOrganisationHome_Click);
+            this.UpdateButtonOrganisationHome.Click += new System.EventHandler(this.UpdateButtonOrganisationHome_Click);
             // 
             // label11
             // 

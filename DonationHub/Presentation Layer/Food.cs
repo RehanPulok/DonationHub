@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DonationHub.Business_Logic_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,23 @@ namespace DonationHub.Presentation_Layer
 {
     public partial class Food : Form
     {
+        string username;
+        int id;
+        public Food(string username)
+        {
+            InitializeComponent();
+            this.username = username;
+        }
+        public Food(int id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
         public Food()
         {
             InitializeComponent();
+            //this.username = username;
         }
-
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -42,6 +55,13 @@ namespace DonationHub.Presentation_Layer
             Organisation org = new Organisation();
             org.Show();
             this.Hide();
+        }
+
+        private void Food_Load(object sender, EventArgs e)
+        {
+            OrganisationIDTextBox.Text = id.ToString();
+            UserService userService = new UserService();
+            DonorIDTextBox.Text = userService.GetDonor(username).ToString();
         }
     }
 }

@@ -38,8 +38,8 @@ namespace DonationHub.Presentation_Layer
 
         private void AdminHome_Load(object sender, EventArgs e)
         {
-            AdminService adminService = new AdminService();
-            UserListDataGridView.DataSource= adminService.GetAllUsers();
+            DonorService donorService = new DonorService();
+            UserListDataGridView.DataSource= donorService.GetAllDonors();
         }
 
         private void DeleteUserButtonAdminHome_Click(object sender, EventArgs e)

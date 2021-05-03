@@ -35,6 +35,7 @@ namespace DonationHub.Presentation_Layer
 
         private void AddButtonUser_Click(object sender, EventArgs e)
         {
+            string email = EmailTextBox.Text;
             if (FirstNameTextBox.Text == "")
             {
 
@@ -72,32 +73,50 @@ namespace DonationHub.Presentation_Layer
             
             else
             {
-                if (PasswordTextBox.Text != COnfirmPasswordTextBox.Text)
+                if (email.Contains("@gmail.com") || email.Contains("@outlook.com") || email.Contains("@yahoo.com"))
                 {
-                    MessageBox.Show("Passwords need to be matched");
-                }
-                else
-                {
-                    string gender;
-                    if (MaleRadioButton.Checked = true)
+                    if (PasswordTextBox.Text != COnfirmPasswordTextBox.Text)
                     {
-                        gender = MaleRadioButton.Text;
+                        MessageBox.Show("Passwords need to be matched");
                     }
                     else
                     {
-                        gender = FemaleRadioButton.Text;
+                        string gender;
+                        if (MaleRadioButton.Checked = true)
+                        {
+                            gender = MaleRadioButton.Text;
+                        }
+                        else
+                        {
+                            gender = FemaleRadioButton.Text;
+                        }
+
+                        int userType = 2;
+
+                        AdminService adminService = new AdminService();
+                        int result = adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, null, 0, userType);
+                        if (result == 1)
+                        {
+                            MessageBox.Show("New donor Added");
+                            Login login = new Login();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to add donor");
+                        }
+
+
+
                     }
-
-                    int userType = 2;
-
-                    AdminService adminService = new AdminService();
-                    adminService.AddNewUser(FirstNameTextBox.Text, LastNameTextBox.Text, EmailTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, AddressTextBox.Text, gender, BloodGroupComboBox.Text, null, 0, userType);
-                    Login login = new Login();
-                    login.Show();
-                    this.Hide();
-
-
+                    
                 }
+                else
+                {
+                    MessageBox.Show("Invalid Email");
+                }
+
             }
         }
     }

@@ -80,7 +80,7 @@ namespace DonationHub.Data_Access_Layer
         
         public int UpdateOrganisation(User volunteerOrganisation)
         {
-            string sql = "UPDATE Users SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "', Username='" + volunteerOrganisation.Username + "', Password='" + volunteerOrganisation.Password + "', GovtLicenseNo='" + volunteerOrganisation.GovtLicenseNo + "' WHERE ID=" + volunteerOrganisation.ID;
+            string sql = "UPDATE Users SET OrganisationName = '" + volunteerOrganisation.OrganisationName + "', Email= '" + volunteerOrganisation.Email + "',  Password='" + volunteerOrganisation.Password + "' WHERE ID=" + volunteerOrganisation.ID;
             return this.ExecuteQuery(sql);
         }
         public int DeleteOrganisation(int organisationID)

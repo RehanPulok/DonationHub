@@ -24,6 +24,62 @@ namespace DonationHub.Presentation_Layer
             Application.Exit();
         }
 
+        private void UpdateButtonOrganisationHome_Click(object sender, EventArgs e)
+        {
+            string email = VolunteerEmailTextBox.Text;
+            if (VolunteerNameTextBox.Text == "")
+            {
+
+                MessageBox.Show("Please enter a Organisation name!");
+            }
+            
+            else if (VoluunteerPasswordTextBox.Text == "")
+            {
+                MessageBox.Show("This can not be empty!");
+            }
+            else if (VolunteerConfirmPasswordTextBox.Text == "")
+            {
+                MessageBox.Show("This can not be empty!");
+            }
+            
+            else
+            {
+                if (email.Contains("@gmail.com") || email.Contains("@outlook.com") || email.Contains("@yahoo.com"))
+                { 
+                    if (VolunteerConfirmPasswordTextBox.Text != VoluunteerPasswordTextBox.Text)
+                    {
+                        MessageBox.Show("Passwords need to be matched");
+                    }
+                    else
+                    {
+                        OrganisationService organisationService = new OrganisationService();
+                        int result = organisationService.UpdateExistingOrganisation(VolunteerEmailTextBox.Text, VoluunteerPasswordTextBox.Text, VolunteerNameTextBox.Text);
+                        if (result == 1)
+                        {
+
+                            MessageBox.Show("Volunteer organisation Updated");
+                            Login login = new Login();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Update Failed");
+                        }
+
+
+
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email");     
+                }
+            }
+            
+        }
+
         /*
         private void UpdateButtonOrganisationHome_Click(object sender, EventArgs e)
         {

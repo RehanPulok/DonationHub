@@ -13,9 +13,22 @@ namespace DonationHub.Presentation_Layer
 {
     public partial class Payment : Form
     {
+        string username;
+        int id;
+        public Payment(string username)
+        {
+            InitializeComponent();
+            this.username = username;
+        }
+        public Payment(int id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
         public Payment()
         {
             InitializeComponent();
+            //this.username = username;
         }
 
         private void PaymentButton_Click(object sender, EventArgs e)
@@ -66,15 +79,18 @@ namespace DonationHub.Presentation_Layer
             {
                 donationDataAccess.MakeDonation(Convert.ToInt32(DonorIDTextBox.Text), Convert.ToInt32(OrganisationIDTextBox.Text), Convert.ToInt32(AmountTextBox.Text), null);
             }
-            MessageBox.Show("You don't have sufficient balance!");
+            else
+            {
+                MessageBox.Show("You don't have sufficient balance!");
+            }
+            
         }
 
         private void Payment_Load(object sender, EventArgs e)
         {
-            UserService usersevice = new UserService();
-            OrganisationService organisationService = new OrganisationService();
-            Login login = new Login();
-            //Convert.ToInt32(DonorIDTextBox.Text) = usersevice.GetDonor(login.UserNameTextBox.Text);
+            UserService userService = new UserService();
+            DonorIDTextBox.Text = userService.GetDonor(username).ToString();
+            OrganisationIDTextBox.Text = id.ToString();
         }
     }
 }

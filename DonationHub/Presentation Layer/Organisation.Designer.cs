@@ -31,13 +31,13 @@ namespace DonationHub.Presentation_Layer
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Organisation));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.EventDataGridView = new System.Windows.Forms.DataGridView();
             this.DonateMoneyButton = new System.Windows.Forms.Button();
             this.DonateFoodButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.EventDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,6 +52,14 @@ namespace DonationHub.Presentation_Layer
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // EventDataGridView
+            // 
+            this.EventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EventDataGridView.Location = new System.Drawing.Point(17, 289);
+            this.EventDataGridView.Name = "EventDataGridView";
+            this.EventDataGridView.Size = new System.Drawing.Size(361, 284);
+            this.EventDataGridView.TabIndex = 11;
             // 
             // DonateMoneyButton
             // 
@@ -78,20 +86,12 @@ namespace DonationHub.Presentation_Layer
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(65, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(65, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // EventDataGridView
-            // 
-            this.EventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EventDataGridView.Location = new System.Drawing.Point(17, 274);
-            this.EventDataGridView.Name = "EventDataGridView";
-            this.EventDataGridView.Size = new System.Drawing.Size(361, 284);
-            this.EventDataGridView.TabIndex = 11;
             // 
             // Organisation
             // 
@@ -102,10 +102,9 @@ namespace DonationHub.Presentation_Layer
             this.Name = "Organisation";
             this.Text = "Organistion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Biddyanando_FormClosing);
-            //this.Load += new System.EventHandler(this.Organisation_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

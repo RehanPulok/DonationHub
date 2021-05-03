@@ -25,7 +25,9 @@ namespace DonationHub.Presentation_Layer
 
         private void AddOrganisationButtonAdminHome_Click(object sender, EventArgs e)
         {
-            
+            AddOrganisation addOrganisation = new AddOrganisation();
+            this.Hide();
+            addOrganisation.Show();
         }
 
         private void DeleteOrganisationButtonAdminHome_Click(object sender, EventArgs e)
@@ -70,6 +72,12 @@ namespace DonationHub.Presentation_Layer
         private void OrganisationListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            OrganisationService organisationService = new OrganisationService();
+            OrganisationListDataGridView.DataSource= organisationService.GetAllVolunteerOrganisations();
         }
     }
 }

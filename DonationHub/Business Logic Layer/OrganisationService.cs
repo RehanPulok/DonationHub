@@ -36,12 +36,7 @@ namespace DonationHub.Business_Logic_Layer
             return this.organisationDataAccess.SearchOrganisation(organisationID);
         }
 
-        public int UpdateExistingOrganisation(string OrganisationName, string email, string username, string password, int govtLicenseNO)
-        {
-            User user = new User() { OrganisationName = OrganisationName, Email = email, Username = username, Password = password, GovtLicenseNo = govtLicenseNO };
-            //OrganisationID
-            return this.organisationDataAccess.UpdateOrganisation(user);
-        }
+        
         public int GetOrganisation(string username)
         {
             return this.organisationDataAccess.GetOrganisationID(username);
@@ -59,10 +54,21 @@ namespace DonationHub.Business_Logic_Layer
             //this.organisationDataAccess = new OrganisationDataAccess();
 
             return organisationDataAccess.OrganisationLoginValidation(govtListOfVolunteerOrganisation);
-
-             
-
-
+                      
+        }
+        public int UpdateExistingOrganisation(string email, string password,string organisationName)
+        {
+            User organisation = new User()
+            {
+                
+                Email = email,
+                Password = password,
+                
+                OrganisationName = organisationName,
+                
+            };
+            
+            return organisationDataAccess.UpdateOrganisation(organisation);
         }
 
 
